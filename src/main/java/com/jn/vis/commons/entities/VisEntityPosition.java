@@ -4,9 +4,9 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class VisPosition extends JnBaseEntity{
-	public VisPosition() {
-		super(false, CcpTimeOption.ddMMyyyyHHmmssSSS, Fields.values());
+public class VisEntityPosition extends JnBaseEntity{
+	public VisEntityPosition() {
+		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
 		title(true), email(true), description(false), contactChannel(false), expireDate(false), 

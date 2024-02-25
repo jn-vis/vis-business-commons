@@ -4,16 +4,14 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class VisResume extends JnBaseEntity{
-	public VisResume() {
-		super(false, CcpTimeOption.ddMMyyyyHHmmssSSS, Fields.values());
+public class VisEntityPositionHourlySendingResumes extends JnBaseEntity{
+	public VisEntityPositionHourlySendingResumes() {
+		super(false, CcpTimeOption.ddMMyyyyHH, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		ddd(false), email(true), disabilities(false), companiesNotAllowed(false), disponibility(false), 
-		observations(false), resumeBase64(false), resumeWords(false), resumeText(false),
-		desiredJob(false), lastJob(false), btc(false), clt(false),
-		pj(false), experience(false),
-		;
+		
+		title(false), email(false), recruiter(false);
+	
 		private final boolean primaryKey;
 
 		private Fields(boolean primaryKey) {
