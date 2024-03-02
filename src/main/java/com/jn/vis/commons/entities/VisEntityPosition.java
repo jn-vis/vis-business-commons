@@ -12,7 +12,9 @@ public class VisEntityPosition extends JnBaseEntity{
 		title(true), email(true), description(false), contactChannel(false), expireDate(false), 
 		mandatorySkill(false), desiredSkill(false), ddd(false), seniority(false),
 		disponibility(false), pcd(false), sortFields(false), frequency(false),
-		channel(false), btc(false), clt(false), pj(false), experience(false),
+		channel(false), btc(false), clt(false), pj(false), experience(false), 
+		synonym(false),
+		
 		;
 		private final boolean primaryKey;
 

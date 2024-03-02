@@ -4,14 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class VisEntityPositionDailySendingResumes extends JnBaseEntity{
-	public VisEntityPositionDailySendingResumes() {
-		super(false, CcpTimeOption.ddMMyyyy, Fields.values());
+public class VisEntityBalance extends JnBaseEntity{
+	public VisEntityBalance() {
+		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		
-		title(false), email(false), recruiter(false);
-	
+		email(true), balance(false),
+		;
 		private final boolean primaryKey;
 
 		private Fields(boolean primaryKey) {
