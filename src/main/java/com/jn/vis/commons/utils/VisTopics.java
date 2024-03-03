@@ -23,6 +23,12 @@ public enum VisTopics  implements CcpTopic {
 			return null;
 		}
 	},
+	sendResumesToThisPosition {
+		@Override
+		public String getTopicName() {
+			return null;
+		}
+	}
 	;
 	public abstract String getTopicName();
 

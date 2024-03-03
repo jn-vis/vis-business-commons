@@ -10,7 +10,7 @@ public class VisEntityPositionSchedulleSendResumes extends JnBaseEntity{
 	}
 	public static enum Fields implements CcpEntityField{
 		
-		title(false), email(false), frequency(true), hash(false);
+		title(false), email(false), frequency(true);
 	
 		private final boolean primaryKey;
 

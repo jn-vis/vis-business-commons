@@ -4,12 +4,12 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class VisEntitySchedulleNotification extends JnBaseEntity{
-	public VisEntitySchedulleNotification() {
-		super(false, CcpTimeOption.ddMMyyyyHH, Fields.values());
+public class VisEntityResumeView extends JnBaseEntity{
+	public VisEntityResumeView() {
+		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		data(false), reason(true), frequency(true),
+		recruiter(true), email(true), date(false)
 		;
 		private final boolean primaryKey;
 
