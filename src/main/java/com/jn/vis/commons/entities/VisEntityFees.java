@@ -4,8 +4,8 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class VisEntityPositionFeesToSend extends JnBaseEntity{
-	public VisEntityPositionFeesToSend() {
+public class VisEntityFees extends JnBaseEntity{
+	public VisEntityFees() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
