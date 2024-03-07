@@ -4,12 +4,12 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class VisEntityResumeHash extends JnBaseEntity{
-	public VisEntityResumeHash() {
+public class VisEntityHashGrouper extends JnBaseEntity{
+	public VisEntityHashGrouper() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		email(false), resumeWord(true), ddd(true), seniority(true), 
+		hash(false), resumeWord(true), ddd(true), seniority(true), 
 		disponibility(true), pcd(true), moneyValue(true), moneyType(true), 
 		synonym(true),
 		;
