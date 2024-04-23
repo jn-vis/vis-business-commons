@@ -9,9 +9,9 @@ public class VisEntityHashGrouper extends JnBaseEntity{
 		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		hash(false), resumeWord(true), ddd(true), seniority(true), 
+		hash(false), resumeWord(true), ddd(true), seniority(true), synonym(true),
 		disponibility(true), pcd(true), moneyValue(true), moneyType(true), 
-		synonym(true),
+		
 		;
 		private final boolean primaryKey;
 
