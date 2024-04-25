@@ -5,9 +5,11 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityDeniedViewToCompany extends JnBaseEntity{
-	public VisEntityDeniedViewToCompany() {
+	private VisEntityDeniedViewToCompany() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
+	public static final VisEntityDeniedViewToCompany INSTANCE = new VisEntityDeniedViewToCompany();
+
 	public static enum Fields implements CcpEntityField{
 		company(true), email(true),
 		;

@@ -5,9 +5,12 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityBalance extends JnBaseEntity{
-	public VisEntityBalance() {
+	private VisEntityBalance() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
+	
+	public static final VisEntityBalance INSTANCE = new VisEntityBalance();
+	
 	public static enum Fields implements CcpEntityField{
 		email(true), balance(false),
 		;

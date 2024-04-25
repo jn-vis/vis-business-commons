@@ -5,9 +5,12 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityHashGrouper extends JnBaseEntity{
-	public VisEntityHashGrouper() {
+	private VisEntityHashGrouper() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
+	
+	public static final VisEntityHashGrouper INSTANCE = new VisEntityHashGrouper();
+
 	public static enum Fields implements CcpEntityField{
 		hash(false), resumeWord(true), ddd(true), seniority(true), synonym(true),
 		disponibility(true), pcd(true), moneyValue(true), moneyType(true), 

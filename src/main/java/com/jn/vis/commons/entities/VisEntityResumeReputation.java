@@ -5,9 +5,12 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityResumeReputation extends JnBaseEntity{
-	public VisEntityResumeReputation() {
+	private VisEntityResumeReputation() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
+
+	public static final VisEntityResumeReputation INSTANCE = new VisEntityResumeReputation();
+
 	public static enum Fields implements CcpEntityField{
 		company(true), email(true),
 		;

@@ -5,9 +5,12 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityResumeInactive extends JnBaseEntity{
-	public VisEntityResumeInactive() {
+	private VisEntityResumeInactive() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
+
+	public static final VisEntityResumeInactive INSTANCE = new VisEntityResumeInactive();
+
 	public static enum Fields implements CcpEntityField{
 		ddd(false), email(true), disabilities(false), companiesNotAllowed(false), disponibility(false), 
 		observations(false), resumeBase64(false), resumeWords(false), resumeText(false),pj(false),

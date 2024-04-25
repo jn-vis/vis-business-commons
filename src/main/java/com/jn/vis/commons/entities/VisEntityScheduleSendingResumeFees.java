@@ -5,9 +5,12 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityScheduleSendingResumeFees extends JnBaseEntity{
-	public VisEntityScheduleSendingResumeFees() {
+	private VisEntityScheduleSendingResumeFees() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
+
+	public static final VisEntityScheduleSendingResumeFees INSTANCE = new VisEntityScheduleSendingResumeFees();
+
 	public static enum Fields implements CcpEntityField{
 		fee(false), frequency(true)
 		;

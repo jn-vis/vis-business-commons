@@ -5,7 +5,10 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityResume extends JnBaseEntity{
-	public VisEntityResume() {
+	
+	public static final VisEntityResume INSTANCE = new VisEntityResume();
+	
+	private VisEntityResume() {
 		super(false, CcpTimeOption.none, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
