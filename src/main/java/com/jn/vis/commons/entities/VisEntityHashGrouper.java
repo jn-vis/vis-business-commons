@@ -12,7 +12,7 @@ public class VisEntityHashGrouper extends JnBaseEntity{
 	public static final VisEntityHashGrouper INSTANCE = new VisEntityHashGrouper();
 
 	public static enum Fields implements CcpEntityField{
-		hash(false), resumeWord(true), ddd(true), seniority(true), synonym(true),
+		resumeWord(true), seniority(true), synonym(true),
 		disponibility(true), pcd(true), moneyValue(true), moneyType(true), 
 		
 		;

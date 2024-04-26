@@ -12,7 +12,7 @@ public class VisEntityBalance extends JnBaseEntity{
 	public static final VisEntityBalance INSTANCE = new VisEntityBalance();
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), balance(false),
+		owner(true), balance(false),
 		;
 		private final boolean primaryKey;
 

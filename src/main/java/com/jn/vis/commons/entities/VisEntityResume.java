@@ -13,8 +13,7 @@ public class VisEntityResume extends JnBaseEntity{
 	}
 	public static enum Fields implements CcpEntityField{
 		ddd(false), email(true), disabilities(false), companiesNotAllowed(false), disponibility(false), 
-		observations(false), resumeBase64(false), resumeWords(false), resumeText(false),pj(false),
-		desiredJob(false), lastJob(false), btc(false), clt(false), experience(false), hash(false), 
+		observations(false), pj(false), desiredJob(false), lastJob(false), btc(false), clt(false), experience(false), skill(false), 
 		synonym(false), lastUpdate(false)
 		,
 		;
