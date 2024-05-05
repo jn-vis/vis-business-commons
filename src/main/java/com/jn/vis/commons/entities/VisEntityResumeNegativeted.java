@@ -20,7 +20,7 @@ public class VisEntityResumeNegativeted extends JnBaseEntity{
 			this.primaryKey = primaryKey;
 		}
 
-		@Override
+		
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
