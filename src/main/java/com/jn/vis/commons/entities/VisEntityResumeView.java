@@ -1,12 +1,12 @@
 package com.jn.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class VisEntityResumeView extends JnBaseEntity{
+	
 	private VisEntityResumeView() {
-		super(false, CcpTimeOption.none, Fields.values());
+		super(Fields.values());
 	}
 
 	public static final VisEntityResumeView INSTANCE = new VisEntityResumeView();
