@@ -2,11 +2,11 @@ package com.jn.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
+import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
 
 public class VisEntityResumeRecruiterView extends JnDisposableEntity{
 	private VisEntityResumeRecruiterView() {
-		super(JnRecordStorageTimeExpiration.monthly, Fields.values());
+		super(JnDiposableRecordTimeExpiration.monthly, Fields.values());
 	}
 
 	public static final VisEntityResumeRecruiterView INSTANCE = new VisEntityResumeRecruiterView();
