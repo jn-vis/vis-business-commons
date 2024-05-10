@@ -1,9 +1,9 @@
 package com.jn.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntityHashGrouper extends JnBaseEntity{
+public class VisEntityHashGrouper extends JnAuditableEntity{
 
 	private VisEntityHashGrouper() {
 		super(Fields.values());

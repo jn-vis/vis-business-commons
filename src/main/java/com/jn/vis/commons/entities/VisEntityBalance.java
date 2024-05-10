@@ -1,9 +1,9 @@
 package com.jn.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntityBalance extends JnBaseEntity{
+public class VisEntityBalance extends JnAuditableEntity{
 	private VisEntityBalance() {
 		super(Fields.values());
 	}
