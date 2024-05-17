@@ -5,7 +5,8 @@ import com.ccp.decorators.CcpHashDecorator;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpPropertiesDecorator;
 import com.ccp.decorators.CcpStringDecorator;
-import com.ccp.especifications.file.bucket.CcpFileBucketOperation;
+import com.ccp.especifications.cache.CcpCacheDecorator;
+import com.jn.vis.commons.cache.tasks.ReadResumeContent;
 
 public class VisCommonsUtils {
 	
@@ -25,14 +26,23 @@ public class VisCommonsUtils {
 		String tenant = systemProperties.getAsString("tenant");
 		return tenant;
 	}
+
 	public static String getResumeContent(String email, String contentType) {
+
+		CcpCacheDecorator cache = getResumeCache(email, contentType);
 		
-		CcpJsonRepresentation put = CcpConstants.EMPTY_JSON.put("email", email);
-		String bucketFolderResume = getBucketFolderResume(put);
-		String tenant = getTenant();
+		String resumeContent = cache.get(ReadResumeContent.INSTANCE, 86400);
 		
-		String execute = CcpFileBucketOperation.get.execute(tenant, bucketFolderResume, contentType);
-		return execute;
+		return resumeContent;
+	}
+
+	public static CcpCacheDecorator getResumeCache(String email, String contentType) {
+		
+		CcpJsonRepresentation put = CcpConstants.EMPTY_JSON.put("email", email).put("contentType", contentType);
+	
+		CcpCacheDecorator cache = new CcpCacheDecorator("resumes").incrementKeys(put);
+		
+		return cache;
 	}
 
 }
