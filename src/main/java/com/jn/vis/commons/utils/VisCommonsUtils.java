@@ -44,5 +44,17 @@ public class VisCommonsUtils {
 		
 		return cache;
 	}
+	
+	public static void removeFromCache(CcpJsonRepresentation resume, String... keys) {
+		
+		String email = resume.getAsString("email");
+
+		for (String key : keys) {
+			
+			CcpCacheDecorator resumeCache = VisCommonsUtils.getResumeCache(email, key);
+			
+			resumeCache.delete();
+		}
+	}	
 
 }
