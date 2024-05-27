@@ -8,8 +8,17 @@ public enum VisAsyncBusiness {
 	sendResumesToThisPositions,
 	positionGrouperNotifications, 
 	resumeBucketGet, 
-	saveResume, 
 	resumeGrouperNotifications, 
-	deleteResume;
+	deleteResume, 
+	sendResumesToEmails, 
+	resumesAlreadySeen, 
+	resumesSearchToPosition, 
+	positionChangeStatus, 
+	resumesPositionSendToEmails, 
+	skillsSuggest, 
+	resumeSaveOpinion, 
+	resumeChangeOpinion
+	
+	;
 
 }

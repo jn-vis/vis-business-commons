@@ -55,6 +55,10 @@ public class VisCommonsUtils {
 			
 			resumeCache.delete();
 		}
-	}	
+	}
+	
+	public static CcpJsonRepresentation getResume(CcpJsonRepresentation json) {
+		return json;
+	}
 
 }
