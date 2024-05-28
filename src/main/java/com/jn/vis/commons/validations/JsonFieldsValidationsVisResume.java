@@ -1,10 +1,12 @@
 package com.jn.vis.commons.validations;
 
+import com.ccp.constantes.CcpConstants;
 import com.ccp.validation.annotations.AllowedValues;
 import com.ccp.validation.annotations.ObjectNumbers;
 import com.ccp.validation.annotations.SimpleArray;
 import com.ccp.validation.annotations.SimpleObject;
 import com.ccp.validation.annotations.ObjectTextSize;
+import com.ccp.validation.annotations.Regex;
 import com.ccp.validation.annotations.ValidationRules;
 import com.ccp.validation.annotations.Year;
 import com.ccp.validation.enums.AllowedValuesValidations;
@@ -16,6 +18,9 @@ import com.ccp.validation.enums.YearValidations;
 
 @ValidationRules(
 
+		regex = {
+				@Regex(value = CcpConstants.EMAIL_REGEX, fields = "email")
+		},
 		simpleObject = {
 				@SimpleObject(rule = SimpleObjectValidations.requiredFields, fields = { 
 						"companiesNotAllowed", 

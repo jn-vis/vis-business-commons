@@ -78,6 +78,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 				@Day(rule = DayValidations.equalsOrLessThan, fields = { "expireDate" }, bound = 365), }
 
 )
-public class JsonFieldsValidationsVisPosition {
+public class JsonFieldsValidationsVisRecruiterReceivingResumes {
 
 }
