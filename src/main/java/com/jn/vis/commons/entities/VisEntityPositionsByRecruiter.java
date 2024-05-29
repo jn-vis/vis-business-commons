@@ -11,7 +11,7 @@ public class VisEntityPositionsByRecruiter extends JnAuditableEntity{
 	public static final VisEntityPositionsByRecruiter INSTANCE = new VisEntityPositionsByRecruiter();
 	
 	public static enum Fields implements CcpEntityField{
-		recruiter(true), title(true), resume(false), 
+		email(true), position(false), 
 		;
 		private final boolean primaryKey;
 

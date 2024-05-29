@@ -14,7 +14,7 @@ public class VisEntityPosition extends JnAuditableEntity{
 		title(true), email(true), seniority(true), description(false), contactChannel(false), 
 		expireDate(false), mandatorySkill(false), desiredSkill(false), ddd(false), pcd(false), 
 		disponibility(false), sortFields(false), frequency(false), channel(false), pj(false),  
-		btc(false), clt(false), experience(false), synonym(false)
+		btc(false), clt(false), experience(false), synonym(false), timestamp(false)
 		
 		;
 		private final boolean primaryKey;

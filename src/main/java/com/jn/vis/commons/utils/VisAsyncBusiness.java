@@ -2,8 +2,8 @@ package com.jn.vis.commons.utils;
 
 import com.jn.commons.utils.JnTopic;
 import com.jn.commons.validations.JsonFieldsValidationJnEmail;
+import com.jn.vis.commons.validations.JsonFieldsValidationsVisPosition;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionId;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionListingResumes;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionReceivingResumes;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionSendResumesToEmail;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisRecruiterReceivingResumes;
@@ -25,7 +25,7 @@ public enum VisAsyncBusiness implements JnTopic{
 
 	positionSendResumesToEmails(JsonFieldsValidationsVisPositionSendResumesToEmail.class), 
 	positionReceivingResumes(JsonFieldsValidationsVisPositionReceivingResumes.class),
-	positionListingResumes(JsonFieldsValidationsVisPositionListingResumes.class), 
+	positionListingResumes(JsonFieldsValidationsVisPosition.class), 
 	positionChangeStatus(JsonFieldsValidationsVisPositionId.class), 
 	positionGrouperNotifications(), 
 	positionGrouperByRecruiter(),
