@@ -13,22 +13,23 @@ import com.jn.vis.commons.validations.JsonFieldsValidationsVisResumeOpinion;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisSkillsSuggest;
 
 public enum VisAsyncBusiness implements JnTopic{
-	resumeChangeOpinion(JsonFieldsValidationsVisResumeOpinion.class), 
-	resumeSaveOpinion(JsonFieldsValidationsVisResumeOpinion.class), 
+	resumeOpinionChange(JsonFieldsValidationsVisResumeOpinion.class), 
+	resumeOpinionSave(JsonFieldsValidationsVisResumeOpinion.class), 
 	resumeBucketSave(JsonFieldsValidationsVisResumeFiles.class), 
-	resumeChangeStatus(JsonFieldsValidationJnEmail.class), 
+	resumeStatusChange(JsonFieldsValidationJnEmail.class), 
 	resumeBucketGet(JsonFieldsValidationJnEmail.class), 
 	resumeDelete(JsonFieldsValidationJnEmail.class), 
 	resumeSave(JsonFieldsValidationsVisResume.class), 
-	resumeViewsGrouperByRecruiter(), 
-	resumeGrouperNotifications(), 
+	resumeViewsRecruiterGrouper(), 
+	resumeNotificationsGrouper(), 
 
-	positionSendResumesToEmails(JsonFieldsValidationsVisPositionSendResumesToEmail.class), 
-	positionReceivingResumes(JsonFieldsValidationsVisPositionReceivingResumes.class),
-	positionListingResumes(JsonFieldsValidationsVisPosition.class), 
-	positionChangeStatus(JsonFieldsValidationsVisPositionId.class), 
-	positionGrouperNotifications(), 
-	positionGrouperByRecruiter(),
+	positionSave(JsonFieldsValidationsVisPosition.class),
+	positionResumesSend(JsonFieldsValidationsVisPositionSendResumesToEmail.class), 
+	positionResumesReceivingByFrequency(JsonFieldsValidationsVisPositionReceivingResumes.class),
+	positionResumesListing(JsonFieldsValidationsVisPosition.class), 
+	positionStatusChange(JsonFieldsValidationsVisPositionId.class), 
+	positionNotificationsGrouper(), 
+	positionRecruiterGrouper(),
 
 	recruiterReceivingResumes(JsonFieldsValidationsVisRecruiterReceivingResumes.class), 
 
