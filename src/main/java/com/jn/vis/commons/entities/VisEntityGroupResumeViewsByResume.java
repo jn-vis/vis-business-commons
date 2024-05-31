@@ -3,15 +3,16 @@ package com.jn.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntityResumeComment extends JnAuditableEntity{
-	private VisEntityResumeComment() {
+public class VisEntityGroupResumeViewsByResume extends JnAuditableEntity{
+	
+	private VisEntityGroupResumeViewsByResume() {
 		super(Fields.values());
 	}
 
-	public static final VisEntityResumeComment INSTANCE = new VisEntityResumeComment();
+	public static final VisEntityGroupResumeViewsByResume INSTANCE = new VisEntityGroupResumeViewsByResume();
 
 	public static enum Fields implements CcpEntityField{
-		recruiter(true), email(true), comment(false)
+		recruiter(true), email(true), date(false)
 		;
 		private final boolean primaryKey;
 

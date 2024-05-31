@@ -4,15 +4,15 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
 import com.jn.commons.entities.base.JnDisposableEntity;
 
-public class VisEntityResumesSeen extends JnDisposableEntity{
-	private VisEntityResumesSeen() {
-		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
+public class VisEntityGroupPositionsByRecruiter extends JnDisposableEntity{
+	private VisEntityGroupPositionsByRecruiter() {
+		super(JnDiposableRecordTimeExpiration.yearly, Fields.values());
 	}
 	
-	public static final VisEntityResumesSeen INSTANCE = new VisEntityResumesSeen();
+	public static final VisEntityGroupPositionsByRecruiter INSTANCE = new VisEntityGroupPositionsByRecruiter();
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), resume(false),
+		email(true), position(false), 
 		;
 		private final boolean primaryKey;
 

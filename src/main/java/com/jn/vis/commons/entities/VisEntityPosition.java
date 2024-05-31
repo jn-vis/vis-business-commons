@@ -1,11 +1,11 @@
 package com.jn.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.jn.commons.entities.base.JnAuditableAndStatusChangebleEntity;
 
-public class VisEntityPosition extends JnAuditableEntity{
+public class VisEntityPosition extends JnAuditableAndStatusChangebleEntity{
 	private VisEntityPosition() {
-		super(Fields.values());
+		super("inactivate_position", Fields.values());
 	}
 	
 	public static final VisEntityPosition INSTANCE = new VisEntityPosition();
