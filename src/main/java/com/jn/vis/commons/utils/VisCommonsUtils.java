@@ -30,7 +30,7 @@ public class VisCommonsUtils {
 	public static String getResumeContent(String email, String contentType) {
 
 		CcpCacheDecorator cache = getResumeCache(email, contentType);
-		
+		//TODO POSSIBILIDADE DE THROWPUT ONEROSO AQUI
 		String resumeContent = cache.get(ReadResumeContent.INSTANCE, 86400);
 		
 		return resumeContent;
@@ -57,8 +57,5 @@ public class VisCommonsUtils {
 		}
 	}
 	
-	public static CcpJsonRepresentation getResume(CcpJsonRepresentation json) {
-		return json;
-	}
 
 }

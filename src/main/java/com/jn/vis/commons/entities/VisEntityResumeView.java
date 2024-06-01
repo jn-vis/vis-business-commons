@@ -12,7 +12,7 @@ public class VisEntityResumeView extends JnAuditableEntity{
 	public static final VisEntityResumeView INSTANCE = new VisEntityResumeView();
 
 	public static enum Fields implements CcpEntityField{
-		recruiter(true), email(true), date(false)
+		recruiter(true), email(true), date(false), timestamp(false)
 		;
 		private final boolean primaryKey;
 

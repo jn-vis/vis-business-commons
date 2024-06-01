@@ -11,7 +11,7 @@ public class VisEntityGroupResumesOpinionsByResume extends JnAuditableEntity{
 	public static final VisEntityGroupResumesOpinionsByResume INSTANCE = new VisEntityGroupResumesOpinionsByResume();
 	
 	public static enum Fields implements CcpEntityField{
-		owner(true), balance(false),
+		recruiter(true), email(true), opinion(false),
 		;
 		private final boolean primaryKey;
 
