@@ -57,5 +57,17 @@ public class VisCommonsUtils {
 		}
 	}
 	
-
+	public static boolean isInsufficientFunds(int itemsCount, 
+			CcpJsonRepresentation fee, CcpJsonRepresentation balance) {
+	
+		Double feeValue = fee.getAsDoubleNumber("fee");
+		
+		Double balanceValue = balance.getAsDoubleNumber("balance");
+		
+		Double totalCostToThisRecruiter = feeValue * itemsCount;
+		
+		boolean insuficientFunds = balanceValue <= totalCostToThisRecruiter;
+		
+		return insuficientFunds;
+	}
 }

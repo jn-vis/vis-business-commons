@@ -33,7 +33,7 @@ public enum VisAsyncBusiness implements JnTopic{
 	recruiterReceivingResumes(JsonFieldsValidationsVisRecruiterReceivingResumes.class), 
 
 	skillsSuggest(JsonFieldsValidationsVisSkillsSuggest.class), 
-	resumeViewAdd(JsonFieldsValidationsVisResumeViewAdd.class), 
+	resumeViewSave(JsonFieldsValidationsVisResumeViewAdd.class), 
 	
 	getRecentLoggedUsers, 
 	;

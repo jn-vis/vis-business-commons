@@ -3,12 +3,12 @@ package com.jn.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntitySkillPending extends JnAuditableEntity{
-	private VisEntitySkillPending() {
+public class VisEntitySkillApproved extends JnAuditableEntity{
+	private VisEntitySkillApproved() {
 		super(Fields.values());
 	}
 	
-	public static final VisEntitySkillPending INSTANCE = new VisEntitySkillPending();
+	public static final VisEntitySkillApproved INSTANCE = new VisEntitySkillApproved();
 	
 	public static enum Fields implements CcpEntityField{
 		skill(true), synonym(false), prerequiste(false), ranking(false)

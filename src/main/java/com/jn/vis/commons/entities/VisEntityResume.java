@@ -24,13 +24,15 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 		email(true),
 		experience(false), 
 		lastJob(false), 
-		lastUpdate(false),
 		name(false),
 		observations(false), 
 		pj(false), 
 		resumeBase64(false),
 		resumeText(false),
 		skill(false), 
+		//FIXME SALVAR O TIMESTAMP
+		timestamp(false),
+		
 		;
 		private final boolean primaryKey;
 
