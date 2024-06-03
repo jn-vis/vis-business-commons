@@ -11,7 +11,7 @@ public class VisEntityBalance extends JnAuditableEntity{
 	public static final VisEntityBalance INSTANCE = new VisEntityBalance();
 	
 	public static enum Fields implements CcpEntityField{
-		owner(true), balance(false),
+		email(true), balance(false),
 		;
 		private final boolean primaryKey;
 

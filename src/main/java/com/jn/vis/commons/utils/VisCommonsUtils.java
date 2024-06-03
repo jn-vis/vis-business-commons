@@ -1,5 +1,9 @@
 package com.jn.vis.commons.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpHashDecorator;
 import com.ccp.decorators.CcpJsonRepresentation;
@@ -7,6 +11,8 @@ import com.ccp.decorators.CcpPropertiesDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.especifications.cache.CcpCacheDecorator;
 import com.jn.vis.commons.cache.tasks.ReadResumeContent;
+import com.jn.vis.commons.cache.tasks.ReadSkillsFromDataBase;
+import com.jn.vis.commons.entities.VisEntitySkill;
 
 public class VisCommonsUtils {
 	
@@ -70,4 +76,39 @@ public class VisCommonsUtils {
 		
 		return insuficientFunds;
 	}
+	
+	public static CcpJsonRepresentation getJsonWithSkills(
+			CcpJsonRepresentation json
+			,String fieldTextToRead
+			,String fieldToPut
+			) {
+		
+		CcpCacheDecorator cache = new CcpCacheDecorator("skills");
+		List<CcpJsonRepresentation> resultAsList = cache.get(ReadSkillsFromDataBase.INSTANCE, 86400);
+		
+		String text = json.getAsString(fieldTextToRead);
+		List<CcpJsonRepresentation> skills = new ArrayList<>();
+		
+		for (CcpJsonRepresentation skill : resultAsList) {
+		
+			String skillName = skill.getAsString(VisEntitySkill.Fields.skill.name());
+			
+			boolean skillNotFoundInJson = text.toUpperCase().contains(skillName.toUpperCase()) == false;
+			
+			if(skillNotFoundInJson) {
+				continue;
+			}
+			
+			List<CcpJsonRepresentation> prerequistes = skill.getAsStringList(VisEntitySkill.Fields.prerequiste.name()).stream().map(x -> CcpConstants.EMPTY_JSON.put("name", x).put("type", VisEntitySkill.Fields.prerequiste.name())).collect(Collectors.toList());
+			List<CcpJsonRepresentation> synonyms = skill.getAsStringList(VisEntitySkill.Fields.synonym.name()).stream().map(x -> CcpConstants.EMPTY_JSON.put("name", x).put("type", VisEntitySkill.Fields.synonym.name())).collect(Collectors.toList());
+			skills.addAll(prerequistes);
+			skills.addAll(synonyms);
+			CcpJsonRepresentation mainSkill = CcpConstants.EMPTY_JSON.put("name", skillName).put("type", "main");
+			skills.add(mainSkill);
+		}
+		
+		CcpJsonRepresentation jsonWithSkills = json.put(fieldToPut, skills);
+		return jsonWithSkills;
+	}
+
 }

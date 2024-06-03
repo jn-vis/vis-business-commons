@@ -11,7 +11,7 @@ public class VisEntityResumeViewFailed extends JnAuditableEntity{
 	public static final VisEntityResumeViewFailed INSTANCE = new VisEntityResumeViewFailed();
 	
 	public static enum Fields implements CcpEntityField{
-		recruiter(true), email(true), status(true), json(false)
+		recruiter(true), email(true), status(true), json(false), timestamp(false),date(false),
 		;
 		private final boolean primaryKey;
 

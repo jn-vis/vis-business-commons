@@ -10,7 +10,7 @@ public class VisEntityDeniedViewToCompany extends JnAuditableEntity{
 	public static final VisEntityDeniedViewToCompany INSTANCE = new VisEntityDeniedViewToCompany();
 
 	public static enum Fields implements CcpEntityField{
-		company(true), email(true),
+		domain(true), email(true),
 		;
 		private final boolean primaryKey;
 
