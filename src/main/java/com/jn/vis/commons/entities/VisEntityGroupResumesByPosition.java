@@ -12,7 +12,7 @@ public class VisEntityGroupResumesByPosition extends JnDisposableEntity{
 	public static final VisEntityGroupResumesByPosition INSTANCE = new VisEntityGroupResumesByPosition();
 	
 	public static enum Fields implements CcpEntityField{
-		detail(false), email(true), title(true), listSize(true), from(true)
+		detail(false), email(true), title(true), seniority(true), listSize(true), from(true)
 		;
 		private final boolean primaryKey;
 
