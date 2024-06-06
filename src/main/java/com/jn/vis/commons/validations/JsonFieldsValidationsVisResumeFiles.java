@@ -14,7 +14,9 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 				@Regex(value = CcpConstants.EMAIL_REGEX, fields = "email")
 		},
 		simpleObject = { @SimpleObject(rule = SimpleObjectValidations.requiredFields, fields = { "resumeBase64",
-				"resumeText", }), }, objectTextSize = {
+				"resumeText", }), }
+		, 
+		objectTextSize = {
 						@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {
 								"resumeBase64" }, bound = 4_200_000),
 						@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {

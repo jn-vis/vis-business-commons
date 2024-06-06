@@ -3,18 +3,15 @@ package com.jn.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntityHashGrouper extends JnAuditableEntity{
-
-	private VisEntityHashGrouper() {
+public class VisEntityResumePerception extends JnAuditableEntity{
+	private VisEntityResumePerception() {
 		super(Fields.values());
 	}
 	
-	public static final VisEntityHashGrouper INSTANCE = new VisEntityHashGrouper();
-
+	public static final VisEntityResumePerception INSTANCE = new VisEntityResumePerception();
+	
 	public static enum Fields implements CcpEntityField{
-		skill(true), seniority(true), synonym(true),
-		disponibility(true), pcd(true), moneyValue(true), 
-		moneyType(true), 
+		recruiter(true), email(true), timestamp(false),date(false),
 		;
 		private final boolean primaryKey;
 
@@ -22,12 +19,10 @@ public class VisEntityHashGrouper extends JnAuditableEntity{
 			this.primaryKey = primaryKey;
 		}
 
+		
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
-	}
 
-	public boolean isVirtual() {
-		return true;
 	}
 }

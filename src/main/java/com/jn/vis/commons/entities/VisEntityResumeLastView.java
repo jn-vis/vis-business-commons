@@ -12,8 +12,8 @@ public class VisEntityResumeLastView extends JnAuditableEntity{
 	public static final VisEntityResumeLastView INSTANCE = new VisEntityResumeLastView();
 
 	public static enum Fields implements CcpEntityField{
-		recruiter(true), email(true), date(false), timestamp(false), negativatedResume(false), inactivePosition(false), resume(false), position(false),
-		opinion(false)
+		recruiter(true), email(true), date(false), timestamp(false), negativatedResume(false), 
+		inactivePosition(false), resume(false), position(false)
 		;
 		private final boolean primaryKey;
 
