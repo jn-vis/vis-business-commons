@@ -11,7 +11,7 @@ public class VisEntitySkill extends JnAuditableEntity{
 	public static final VisEntitySkill INSTANCE = new VisEntitySkill();
 	
 	public static enum Fields implements CcpEntityField{
-		skill(true), synonym(false), prerequiste(false), ranking(false)
+		skill(true), synonym(false), prerequisite(false), ranking(false)
 		;
 		private final boolean primaryKey;
 
