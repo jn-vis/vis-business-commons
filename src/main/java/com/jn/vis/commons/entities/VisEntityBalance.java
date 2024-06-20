@@ -1,8 +1,11 @@
 package com.jn.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.validation.annotations.ValidationRules;
 import com.jn.commons.entities.base.JnAuditableEntity;
+import com.jn.vis.commons.validations.JsonFieldsValidationsVisBalance;
 
+@ValidationRules(rulesClass = JsonFieldsValidationsVisBalance.class)
 public class VisEntityBalance extends JnAuditableEntity{
 	private VisEntityBalance() {
 		super(Fields.values());
