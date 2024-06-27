@@ -55,22 +55,22 @@ import com.ccp.validation.enums.YearValidations;
 		},
 
 		objectTextSize = {
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {
-						"observations" }, bound = 500),
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {
-						"resumeBase64" }, bound = 4_200_000),
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {
-						"resumeText" }, bound = 2_100_000),
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, fields = {
-						"resumeBase64" }, bound = 512),
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, fields = {
-						"resumeText" }, bound = 512),
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = { "desiredJob",
-						"lastJob" }, bound = 100),
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, fields = {"name"}, 
-				bound = 10), 
-				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {"name"}, 
-				bound = 50), 
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
+						fields = { "observations" }, bound = 500),
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
+						fields = { "resumeBase64" }, bound = 4_200_000),
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
+						fields = { "resumeText" }, bound = 2_100_000),
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, 
+						fields = { "resumeBase64" }, bound = 512),
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, 
+						fields = { "resumeText" }, bound = 512),
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
+						fields = { "desiredJob", "lastJob" }, bound = 100),
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, 
+						fields = {"name"}, bound = 3), //bound = 10), 
+				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
+						fields = {"name"}, bound = 100), //bound = 50), 
 				
 		},
 
