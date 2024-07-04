@@ -1,4 +1,4 @@
-package com.jn.vis.commons.entities;
+package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
@@ -12,7 +12,7 @@ public class VisEntityScheduleSendingResumeFees extends JnAuditableEntity{
 	public static final VisEntityScheduleSendingResumeFees INSTANCE = new VisEntityScheduleSendingResumeFees();
 
 	public static enum Fields implements CcpEntityField{
-		fee(false), frequency(true)
+		fee(false), service(true)
 		;
 		private final boolean primaryKey;
 

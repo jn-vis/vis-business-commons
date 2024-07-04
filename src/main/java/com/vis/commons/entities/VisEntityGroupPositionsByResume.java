@@ -1,17 +1,17 @@
-package com.jn.vis.commons.entities;
+package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
 import com.jn.commons.entities.base.JnDisposableEntity;
 
-public class VisEntityGroupResumesPerceptionsByRecruiter extends JnDisposableEntity{
+public class VisEntityGroupPositionsByResume  extends JnDisposableEntity{
 	
-	private VisEntityGroupResumesPerceptionsByRecruiter() {
+	private VisEntityGroupPositionsByResume() {
 		super(JnDiposableRecordTimeExpiration.yearly, Fields.values());
 	}
-	
-	public static final VisEntityGroupResumesPerceptionsByRecruiter INSTANCE = new VisEntityGroupResumesPerceptionsByRecruiter();
-	
+
+	public static final VisEntityGroupPositionsByResume INSTANCE = new VisEntityGroupPositionsByResume();
+
 	public static enum Fields implements CcpEntityField{
 		detail(false), email(true), listSize(true), from(true)
 		;

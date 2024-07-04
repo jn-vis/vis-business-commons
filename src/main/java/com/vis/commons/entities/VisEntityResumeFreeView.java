@@ -1,19 +1,19 @@
-package com.jn.vis.commons.entities;
+package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
 import com.jn.commons.entities.base.JnDisposableEntity;
 
-public class VisEntityGroupPositionsByResume  extends JnDisposableEntity{
+public class VisEntityResumeFreeView extends JnDisposableEntity{
 	
-	private VisEntityGroupPositionsByResume() {
-		super(JnDiposableRecordTimeExpiration.yearly, Fields.values());
+	private VisEntityResumeFreeView() {
+		super(JnDiposableRecordTimeExpiration.monthly, Fields.values());
 	}
 
-	public static final VisEntityGroupPositionsByResume INSTANCE = new VisEntityGroupPositionsByResume();
+	public static final VisEntityResumeFreeView INSTANCE = new VisEntityResumeFreeView();
 
 	public static enum Fields implements CcpEntityField{
-		detail(false), email(true), listSize(true), from(true)
+		recruiter(true), email(true), date(false), timestamp(false)
 		;
 		private final boolean primaryKey;
 

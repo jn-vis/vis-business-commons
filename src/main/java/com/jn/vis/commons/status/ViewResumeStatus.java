@@ -4,7 +4,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.process.CcpProcessStatus;
-import com.jn.vis.commons.entities.VisEntityResumeViewFailed;
+import com.vis.commons.entities.VisEntityResumeViewFailed;
 
 public enum ViewResumeStatus implements CcpProcessStatus{
 	inactiveResume(301),

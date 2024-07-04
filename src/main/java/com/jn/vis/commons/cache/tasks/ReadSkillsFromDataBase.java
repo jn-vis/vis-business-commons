@@ -7,7 +7,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.query.CcpDbQueryOptions;
 import com.ccp.especifications.db.query.CcpQueryExecutor;
-import com.jn.vis.commons.entities.VisEntitySkill;
+import com.vis.commons.entities.VisEntitySkill;
 
 public class ReadSkillsFromDataBase implements Function<CcpJsonRepresentation, List<CcpJsonRepresentation>>{
 	private ReadSkillsFromDataBase() {}
@@ -21,7 +21,7 @@ public class ReadSkillsFromDataBase implements Function<CcpJsonRepresentation, L
 		List<CcpJsonRepresentation> list = queryExecutor.getResultAsList(
 				query, 
 				resourcesNames,  
-				VisEntitySkill.Fields.prerequisite.name(), 
+				VisEntitySkill.Fields.preRequisite.name(), 
 				VisEntitySkill.Fields.synonym.name(), 
 				VisEntitySkill.Fields.skill.name()
 				);

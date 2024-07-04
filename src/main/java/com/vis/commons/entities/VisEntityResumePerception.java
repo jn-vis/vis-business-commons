@@ -1,19 +1,17 @@
-package com.jn.vis.commons.entities;
+package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntityResumeLastView extends JnAuditableEntity{
-	
-	private VisEntityResumeLastView() {
+public class VisEntityResumePerception extends JnAuditableEntity{
+	private VisEntityResumePerception() {
 		super(Fields.values());
 	}
-
-	public static final VisEntityResumeLastView INSTANCE = new VisEntityResumeLastView();
-
+	
+	public static final VisEntityResumePerception INSTANCE = new VisEntityResumePerception();
+	
 	public static enum Fields implements CcpEntityField{
-		recruiter(true), email(true), date(false), timestamp(false), negativatedResume(false), 
-		inactivePosition(false), resume(false), position(false)
+		recruiter(true), email(true), timestamp(false),date(false),
 		;
 		private final boolean primaryKey;
 

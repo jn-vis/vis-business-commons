@@ -12,7 +12,7 @@ import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.especifications.cache.CcpCacheDecorator;
 import com.jn.vis.commons.cache.tasks.ReadResumeContent;
 import com.jn.vis.commons.cache.tasks.ReadSkillsFromDataBase;
-import com.jn.vis.commons.entities.VisEntitySkill;
+import com.vis.commons.entities.VisEntitySkill;
 
 public class VisCommonsUtils {
 	
@@ -100,7 +100,7 @@ public class VisCommonsUtils {
 				continue;
 			}
 			 
-			List<String> prerequisites = skill.getAsStringList(VisEntitySkill.Fields.prerequisite.name());
+			List<String> prerequisites = skill.getAsStringList(VisEntitySkill.Fields.preRequisite.name());
 			List<String> synonyms = skill.getAsStringList(VisEntitySkill.Fields.synonym.name());
 			skills.addAll(prerequisites);	
 			skills.addAll(synonyms);	

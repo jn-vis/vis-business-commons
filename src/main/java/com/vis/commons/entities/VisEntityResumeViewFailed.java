@@ -1,17 +1,17 @@
-package com.jn.vis.commons.entities;
+package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class VisEntitySkillApproved extends JnAuditableEntity{
-	private VisEntitySkillApproved() {
+public class VisEntityResumeViewFailed extends JnAuditableEntity{
+	private VisEntityResumeViewFailed() {
 		super(Fields.values());
 	}
 	
-	public static final VisEntitySkillApproved INSTANCE = new VisEntitySkillApproved();
+	public static final VisEntityResumeViewFailed INSTANCE = new VisEntityResumeViewFailed();
 	
 	public static enum Fields implements CcpEntityField{
-		skill(true), synonym(false), prerequiste(false), ranking(false)
+		recruiter(true), email(true), status(true), json(false), timestamp(false),date(false),
 		;
 		private final boolean primaryKey;
 

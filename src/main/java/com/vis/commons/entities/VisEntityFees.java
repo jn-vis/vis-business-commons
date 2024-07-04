@@ -1,20 +1,21 @@
-package com.jn.vis.commons.entities;
+package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.validation.annotations.ValidationRules;
 import com.jn.commons.entities.base.JnAuditableEntity;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisBalance;
+import com.jn.vis.commons.validations.JsonFieldsValidationsVisFees;
 
-@ValidationRules(rulesClass = JsonFieldsValidationsVisBalance.class)
-public class VisEntityBalance extends JnAuditableEntity{
-	private VisEntityBalance() {
+@ValidationRules(rulesClass = JsonFieldsValidationsVisFees.class)
+public class VisEntityFees extends JnAuditableEntity{
+
+	private VisEntityFees() {
 		super(Fields.values());
 	}
-	
-	public static final VisEntityBalance INSTANCE = new VisEntityBalance();
-	
+
+	public static final VisEntityFees INSTANCE = new VisEntityFees();
+
 	public static enum Fields implements CcpEntityField{
-		email(true), balance(false),
+		fee(false), service(true)
 		;
 		private final boolean primaryKey;
 
