@@ -1,18 +1,19 @@
 package com.jn.vis.commons.utils;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpHashDecorator;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpPropertiesDecorator;
 import com.ccp.decorators.CcpStringDecorator;
+import com.ccp.decorators.CcpTextDecorator;
 import com.ccp.especifications.cache.CcpCacheDecorator;
 import com.jn.vis.commons.cache.tasks.ReadResumeContent;
 import com.jn.vis.commons.cache.tasks.ReadSkillsFromDataBase;
-import com.vis.commons.entities.VisEntitySkill;
 
 public class VisCommonsUtils {
 	
@@ -86,27 +87,42 @@ public class VisCommonsUtils {
 		CcpCacheDecorator cache = new CcpCacheDecorator("skills");
 		List<CcpJsonRepresentation> resultAsList = cache.get(ReadSkillsFromDataBase.INSTANCE, 86400);
 		
-		String text = json.getAsString(fieldTextToRead);
-		
-		Set<String> skills = new HashSet<>();
-		
+		CcpTextDecorator text = json.getAsTextDecorator(fieldTextToRead).sanitize();
+		List<CcpJsonRepresentation> allSkills = new ArrayList<>();
 		for (CcpJsonRepresentation skill : resultAsList) {
 		
-			String skillName = skill.getAsString(VisEntitySkill.Fields.skill.name());
+			Set<String> allSynonyms = 
+					skill.getAsJsonList("synonym")
+					.stream()
+					.map(synonym -> synonym.getAsString("skill"))
+					.collect(Collectors.toSet());
 			
-			boolean skillNotFoundInJson = text.toUpperCase().contains(skillName.toUpperCase()) == false;
+			Set<String> wordsThatWasFoundDirectlyInThisText = allSynonyms
+			.stream()
+			.filter(synonym -> text.contains(synonym))
+			.collect(Collectors.toSet());
+
+			boolean thisSkillWasNotFoundInThisText = wordsThatWasFoundDirectlyInThisText.isEmpty();
 			
-			if(skillNotFoundInJson) {
+			if(thisSkillWasNotFoundInThisText) {
 				continue;
 			}
-			 
-			List<String> prerequisites = skill.getAsStringList(VisEntitySkill.Fields.preRequisite.name());
-			List<String> synonyms = skill.getAsStringList(VisEntitySkill.Fields.synonym.name());
-			skills.addAll(prerequisites);	
-			skills.addAll(synonyms);	
+			
+			List<String> parents = skill.getAsStringList("parent");
+			Set<String> wordsThatWasFoundAsSynonymInThisText = allSynonyms
+			.stream()
+			.filter(synonym -> wordsThatWasFoundDirectlyInThisText.contains(synonym) == false)
+			.collect(Collectors.toSet());
+			List<CcpJsonRepresentation> skills = wordsThatWasFoundDirectlyInThisText.stream().map(
+					word -> CcpConstants.EMPTY_JSON
+										.put("synonyms", wordsThatWasFoundAsSynonymInThisText)
+										.put("parents", parents)
+										.put("skill", word)
+					).collect(Collectors.toList());
+			allSkills.addAll(skills);
 		}
 		
-		CcpJsonRepresentation jsonWithSkills = json.put(fieldToPut, skills);
+		CcpJsonRepresentation jsonWithSkills = json.put(fieldToPut, allSkills);
 		return jsonWithSkills;
 	}
 

@@ -12,9 +12,8 @@ public class VisEntityVirtualHashGrouper extends JnAuditableEntity{
 	public static final VisEntityVirtualHashGrouper INSTANCE = new VisEntityVirtualHashGrouper();
 
 	public static enum Fields implements CcpEntityField{
-		skill(true), seniority(true), synonym(true),
-		disponibility(true), pcd(true), moneyValue(true), 
-		moneyType(true), 
+		seniority(true), synonym(true),disponibility(true), 
+		pcd(true), moneyValue(true), moneyType(true), 
 		;
 		private final boolean primaryKey;
 
