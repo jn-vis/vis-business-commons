@@ -21,7 +21,7 @@ public class ReadSkillsFromDataBase implements Function<CcpJsonRepresentation, L
 		List<CcpJsonRepresentation> list = queryExecutor.getResultAsList(
 				query, 
 				resourcesNames,  
-				VisEntitySkill.Fields.preRequisite.name(), 
+				VisEntitySkill.Fields.parent.name(), 
 				VisEntitySkill.Fields.synonym.name(), 
 				VisEntitySkill.Fields.skill.name()
 				);

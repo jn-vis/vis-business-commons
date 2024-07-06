@@ -115,8 +115,8 @@ public class VisCommonsUtils {
 			.collect(Collectors.toSet());
 			List<CcpJsonRepresentation> skills = wordsThatWasFoundDirectlyInThisText.stream().map(
 					word -> CcpConstants.EMPTY_JSON
-										.put("synonyms", wordsThatWasFoundAsSynonymInThisText)
-										.put("parents", parents)
+										.put("synonym", wordsThatWasFoundAsSynonymInThisText)
+										.put("parent", parents)
 										.put("skill", word)
 					).collect(Collectors.toList());
 			allSkills.addAll(skills);
