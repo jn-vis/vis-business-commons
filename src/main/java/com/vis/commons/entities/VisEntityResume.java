@@ -3,9 +3,8 @@ package com.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.validation.annotations.ValidationRules;
 import com.jn.commons.entities.base.JnAuditableAndStatusChangebleEntity;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisResume;
 
-@ValidationRules(rulesClass = JsonFieldsValidationsVisResume.class)
+@ValidationRules()
 public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 	
 	public static final VisEntityResume INSTANCE = new VisEntityResume();
@@ -24,14 +23,9 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 		email(true),
 		experience(false), 
 		lastJob(false), 
-		name(false),
-		observations(false), 
 		pj(false), 
-		resumeBase64(false),
-		resumeText(false),
 		skill(false), 
-		timestamp(false),
-		date(false)
+		timestamp(false)
 		;
 		private final boolean primaryKey;
 
@@ -39,10 +33,8 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 			this.primaryKey = primaryKey;
 		}
 
-		
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
-
 	}
 }
