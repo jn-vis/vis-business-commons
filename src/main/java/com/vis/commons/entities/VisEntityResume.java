@@ -25,7 +25,8 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 		lastJob(false), 
 		pj(false), 
 		skill(false), 
-		timestamp(false)
+		timestamp(false),
+		date(false)
 		;
 		private final boolean primaryKey;
 

@@ -8,7 +8,6 @@ import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionReceivingR
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionSendResumesToEmail;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisRecruiterReceivingResumes;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisResume;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisResumeFiles;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisResumeOpinion;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisResumeViewAdd;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisSkillsSuggest;
@@ -16,12 +15,13 @@ import com.jn.vis.commons.validations.JsonFieldsValidationsVisSkillsSuggest;
 public enum VisAsyncBusiness implements JnTopic{
 	resumeOpinionChange(JsonFieldsValidationsVisResumeOpinion.class), 
 	resumeOpinionSave(JsonFieldsValidationsVisResumeOpinion.class), 
-	resumeBucketSave(JsonFieldsValidationsVisResumeFiles.class), 
 	resumeStatusChange(JsonFieldsValidationJnEmail.class), 
-	resumeSave(JsonFieldsValidationsVisResume.class), 
-	resumeDelete(JsonFieldsValidationJnEmail.class), 
+	resume(JsonFieldsValidationsVisResume.class),
 	groupResumesOpinionsByResume, 
 	groupResumeViewsByResume, 
+	resumeBucketSave, 
+	resumeDelete, 
+	resumeSave,
 
 	groupResumeViewsByRecruiter, 
 	groupResumesOpinionsByRecruiter, 
