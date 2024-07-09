@@ -27,11 +27,11 @@ import com.ccp.validation.enums.YearValidations;
 						"experience",
 						"lastJob", 
 						"name",
-						"name",
 						"fileName",
 						"observations", 
 						"resumeBase64", 
 						"originalEmail",
+						"email"
 						}),
 				@SimpleObject(rule = SimpleObjectValidations.requiredAtLeastOne, 
 				fields = { "clt", "pj" }),
