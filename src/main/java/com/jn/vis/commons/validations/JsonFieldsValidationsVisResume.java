@@ -68,8 +68,6 @@ import com.ccp.validation.enums.YearValidations;
 		fields = {"name"}, bound = 3), //bound = 10), 
 		@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
 				fields = {"name"}, bound = 100), //bound = 50), 
-		@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, 
-		fields = {"email"}, bound = 40), //bound = 10), 
 		@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, 
 		fields = {"email"}, bound = 41), //bound = 50), 
 		},

@@ -5,7 +5,7 @@ import com.jn.commons.entities.base.JnAuditableAndStatusChangebleEntity;
 
 public class VisEntityPosition extends JnAuditableAndStatusChangebleEntity{
 	private VisEntityPosition() {
-		super("inactivate_position", Fields.values());
+		super("inactive_position", Fields.values());
 	}
 	
 	public static final VisEntityPosition INSTANCE = new VisEntityPosition();

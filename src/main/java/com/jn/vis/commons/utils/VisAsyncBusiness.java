@@ -1,7 +1,6 @@
 package com.jn.vis.commons.utils;
 
 import com.jn.commons.utils.JnTopic;
-import com.jn.commons.validations.JsonFieldsValidationJnEmail;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPosition;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionId;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionReceivingResumes;
@@ -15,10 +14,10 @@ import com.jn.vis.commons.validations.JsonFieldsValidationsVisSkillsSuggest;
 public enum VisAsyncBusiness implements JnTopic{
 	resumeOpinionChange(JsonFieldsValidationsVisResumeOpinion.class), 
 	resumeOpinionSave(JsonFieldsValidationsVisResumeOpinion.class), 
-	resumeStatusChange(JsonFieldsValidationJnEmail.class), 
 	resume(JsonFieldsValidationsVisResume.class),
 	groupResumesOpinionsByResume, 
 	groupResumeViewsByResume, 
+	resumeStatusChange, 
 	resumeBucketSave, 
 	resumeDelete, 
 	resumeSave,

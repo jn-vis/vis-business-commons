@@ -10,7 +10,7 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 	public static final VisEntityResume INSTANCE = new VisEntityResume();
 	
 	private VisEntityResume() {
-		super("inactivate_resume", Fields.values());
+		super("inactive_resume", Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
 		companiesNotAllowed(false), 
