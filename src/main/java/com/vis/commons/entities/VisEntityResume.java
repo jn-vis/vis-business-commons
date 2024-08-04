@@ -13,9 +13,10 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 		super("inactive_resume", Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		companiesNotAllowed(false), 
 		btc(false), 
 		clt(false), 
+		companiesNotAllowed(false), 
+		date(false),
 		ddd(false), 
 		desiredJob(false), 
 		disabilities(false), 
@@ -26,7 +27,6 @@ public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
 		pj(false), 
 		skill(false), 
 		timestamp(false),
-		date(false)
 		;
 		private final boolean primaryKey;
 

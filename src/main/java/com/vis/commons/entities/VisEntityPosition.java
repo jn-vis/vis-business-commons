@@ -11,10 +11,25 @@ public class VisEntityPosition extends JnAuditableAndStatusChangebleEntity{
 	public static final VisEntityPosition INSTANCE = new VisEntityPosition();
 
 	public static enum Fields implements CcpEntityField{
-		title(true), email(true), seniority(true), description(false), contactChannel(false), 
-		expireDate(false), requiredSkill(false), desiredSkill(false), ddd(false), pcd(false), 
-		disponibility(false), sortFields(false), frequency(false), channel(false), pj(false),  
-		btc(false), clt(false), experience(false), synonym(false), timestamp(false), date(false)
+		btc(false), 
+		channel(false), 
+		clt(false), 
+		contactChannel(false), 
+		date(false),
+		ddd(false), 
+		description(false), 
+		desiredSkill(false), 
+		disponibility(false), 
+		email(true), 
+		expireDate(false), 
+		frequency(false), 
+		pcd(false), 
+		pj(false),  
+		requiredSkill(false), 
+		seniority(true), 
+		sortFields(false), 
+		timestamp(false), 
+		title(true), 
 		
 		;
 		private final boolean primaryKey;
