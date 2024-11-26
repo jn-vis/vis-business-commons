@@ -12,7 +12,7 @@ public class VisEntityGroupPositionsByRecruiter extends JnDisposableEntity{
 	public static final VisEntityGroupPositionsByRecruiter INSTANCE = new VisEntityGroupPositionsByRecruiter();
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), listSize(true), from(true),   detail(false)
+		email(true), listSize(true), from(true), detail(false)
 		;
 		private final boolean primaryKey;
 
