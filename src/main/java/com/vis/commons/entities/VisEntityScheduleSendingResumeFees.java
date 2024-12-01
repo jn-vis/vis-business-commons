@@ -1,15 +1,13 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntityScheduleSendingResumeFees extends JnAuditableEntity{
+//super(Fields.values());
+public class VisEntityScheduleSendingResumeFees{
 
-	private VisEntityScheduleSendingResumeFees() {
-		super(Fields.values());
-	}
-
-	public static final VisEntityScheduleSendingResumeFees INSTANCE = new VisEntityScheduleSendingResumeFees();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 
 	public static enum Fields implements CcpEntityField{
 		fee(false), service(true)

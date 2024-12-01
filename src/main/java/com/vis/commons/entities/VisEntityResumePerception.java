@@ -1,14 +1,13 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntityResumePerception extends JnAuditableEntity{
-	private VisEntityResumePerception() {
-		super(Fields.values());
-	}
-	
-	public static final VisEntityResumePerception INSTANCE = new VisEntityResumePerception();
+//super(Fields.values());
+public class VisEntityResumePerception{
+
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 	
 	public static enum Fields implements CcpEntityField{
 		recruiter(true), email(true), timestamp(false),date(false),

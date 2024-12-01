@@ -1,14 +1,15 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntitySkillApproved extends JnAuditableEntity{
+//super(Fields.values());
+public class VisEntitySkillApproved{
 	private VisEntitySkillApproved() {
-		super(Fields.values());
 	}
 	
-	public static final VisEntitySkillApproved INSTANCE = new VisEntitySkillApproved();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 	
 	public static enum Fields implements CcpEntityField{
 		skill(true), synonym(false), prerequiste(false), ranking(false)

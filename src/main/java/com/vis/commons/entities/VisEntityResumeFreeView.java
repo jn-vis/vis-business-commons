@@ -1,16 +1,14 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
-import com.jn.commons.entities.base.JnDisposableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntityResumeFreeView extends JnDisposableEntity{
+//super(CcpLongevityEntity.monthly, Fields.values());
+public class VisEntityResumeFreeView{
 	
-	private VisEntityResumeFreeView() {
-		super(JnDiposableRecordTimeExpiration.monthly, Fields.values());
-	}
 
-	public static final VisEntityResumeFreeView INSTANCE = new VisEntityResumeFreeView();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 
 	public static enum Fields implements CcpEntityField{
 		recruiter(true), email(true), date(false), timestamp(false)

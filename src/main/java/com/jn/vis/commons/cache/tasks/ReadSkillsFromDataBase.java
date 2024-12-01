@@ -17,7 +17,7 @@ public class ReadSkillsFromDataBase implements Function<CcpJsonRepresentation, L
 	public List<CcpJsonRepresentation> apply(CcpJsonRepresentation t) {
 		CcpQueryExecutor queryExecutor = CcpDependencyInjection.getDependency(CcpQueryExecutor.class);
 		CcpDbQueryOptions query = CcpDbQueryOptions.INSTANCE.addDescSorting("ranking").maxResults();
-		String[] resourcesNames = new String[] {VisEntitySkill.INSTANCE.getEntityName()};
+		String[] resourcesNames = new String[] {VisEntitySkill.ENTITY.getEntityName()};
 		List<CcpJsonRepresentation> list = queryExecutor.getResultAsList(
 				query, 
 				resourcesNames,  

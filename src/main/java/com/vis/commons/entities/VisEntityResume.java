@@ -1,17 +1,16 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 import com.ccp.validation.annotations.ValidationRules;
-import com.jn.commons.entities.base.JnAuditableAndStatusChangebleEntity;
 
+//super("inactive_resume", Fields.values());
 @ValidationRules()
-public class VisEntityResume extends JnAuditableAndStatusChangebleEntity{
+public class VisEntityResume{
 	
-	public static final VisEntityResume INSTANCE = new VisEntityResume();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 	
-	private VisEntityResume() {
-		super("inactive_resume", Fields.values());
-	}
 	public static enum Fields implements CcpEntityField{
 		btc(false), 
 		clt(false), 

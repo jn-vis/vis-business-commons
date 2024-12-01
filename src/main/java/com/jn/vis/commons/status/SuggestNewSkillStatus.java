@@ -24,7 +24,7 @@ public enum SuggestNewSkillStatus implements CcpProcessStatus{
 	}
 
 	public CcpBulkItem toBulkItemCreate(CcpJsonRepresentation json) {
-		CcpBulkItem bulkItem = VisEntityResumeViewFailed.INSTANCE.toBulkItem(json, CcpEntityOperationType.create);
+		CcpBulkItem bulkItem = VisEntityResumeViewFailed.ENTITY.toBulkItem(json, CcpEntityOperationType.create);
 		return bulkItem;
 	}
 }

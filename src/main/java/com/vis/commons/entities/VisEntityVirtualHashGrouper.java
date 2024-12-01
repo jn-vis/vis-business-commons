@@ -1,15 +1,13 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntityVirtualHashGrouper extends JnAuditableEntity{
+//super(Fields.values());
+public class VisEntityVirtualHashGrouper{
 
-	private VisEntityVirtualHashGrouper() {
-		super(Fields.values());
-	}
-	
-	public static final VisEntityVirtualHashGrouper INSTANCE = new VisEntityVirtualHashGrouper();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 
 	public static enum Fields implements CcpEntityField{
 		seniority(true), synonym(true),disponibility(true), 
@@ -26,7 +24,7 @@ public class VisEntityVirtualHashGrouper extends JnAuditableEntity{
 		}
 	}
 
-	public boolean isVirtual() {
+	public boolean isVirtualEntity() {
 		return true;
 	}
 }

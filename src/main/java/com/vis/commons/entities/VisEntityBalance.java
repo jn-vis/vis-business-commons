@@ -1,18 +1,17 @@
 
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 import com.ccp.validation.annotations.ValidationRules;
-import com.jn.commons.entities.base.JnAuditableEntity;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisBalance;
 
 @ValidationRules(rulesClass = JsonFieldsValidationsVisBalance.class)
-public class VisEntityBalance extends JnAuditableEntity{
-	private VisEntityBalance() {
-		super(Fields.values());
-	}
-	
-	public static final VisEntityBalance INSTANCE = new VisEntityBalance();
+//super(Fields.values());
+public class VisEntityBalance{
+
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), balance(false),

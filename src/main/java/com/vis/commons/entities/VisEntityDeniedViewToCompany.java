@@ -1,16 +1,16 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 import com.ccp.validation.annotations.ValidationRules;
-import com.jn.commons.entities.base.JnAuditableEntity;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisDeniedViewToCompany;
+//super(Fields.values());
 
 @ValidationRules(rulesClass = JsonFieldsValidationsVisDeniedViewToCompany.class)
-public class VisEntityDeniedViewToCompany extends JnAuditableEntity{
-	private VisEntityDeniedViewToCompany() {
-		super(Fields.values());
-	}
-	public static final VisEntityDeniedViewToCompany INSTANCE = new VisEntityDeniedViewToCompany();
+public class VisEntityDeniedViewToCompany{
+
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 
 	public static enum Fields implements CcpEntityField{
 		domain(true), email(true),

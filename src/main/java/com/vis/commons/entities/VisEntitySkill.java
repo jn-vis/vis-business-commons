@@ -8,15 +8,13 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntitySkill extends JnAuditableEntity{
-	private VisEntitySkill() {
-		super(Fields.values());
-	}
-	
-	public static final VisEntitySkill INSTANCE = new VisEntitySkill();
+//super(Fields.values());
+public class VisEntitySkill{
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 	
 	public static enum Fields implements CcpEntityField{
 		parent(false), positionsCount(false), preRequisite(false), ranking(false), 
@@ -38,7 +36,7 @@ public class VisEntitySkill extends JnAuditableEntity{
 		CcpStringDecorator csd = new CcpStringDecorator("C:\\eclipse-workspaces\\ccp\\jn\\jn-dependency-chooser-documentation-and-junit-testing\\documentation\\skills\\synonyms.json");
 		CcpFileDecorator file = csd.file();
 		List<CcpJsonRepresentation> asJsonList = file.asJsonList();
-		List<CcpBulkItem> collect = asJsonList.stream().map(x -> new CcpBulkItem(x, CcpEntityOperationType.create, INSTANCE)).collect(Collectors.toList());
+		List<CcpBulkItem> collect = asJsonList.stream().map(x -> new CcpBulkItem(x, CcpEntityOperationType.create, ENTITY)).collect(Collectors.toList());
 		return collect;
 	}
 }

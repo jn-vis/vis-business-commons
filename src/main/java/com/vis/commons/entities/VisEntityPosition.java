@@ -1,14 +1,12 @@
 package com.vis.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableAndStatusChangebleEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class VisEntityPosition extends JnAuditableAndStatusChangebleEntity{
-	private VisEntityPosition() {
-		super("inactive_position", Fields.values());
-	}
-	
-	public static final VisEntityPosition INSTANCE = new VisEntityPosition();
+public class VisEntityPosition{
+
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
 
 	public static enum Fields implements CcpEntityField{
 		btc(false), 
