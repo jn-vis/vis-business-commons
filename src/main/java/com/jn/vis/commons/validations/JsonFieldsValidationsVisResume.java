@@ -5,7 +5,7 @@ import com.ccp.validation.annotations.ObjectNumbers;
 import com.ccp.validation.annotations.ObjectTextSize;
 import com.ccp.validation.annotations.SimpleArray;
 import com.ccp.validation.annotations.SimpleObject;
-import com.ccp.validation.annotations.ValidationRules;
+import com.ccp.validation.annotations.CcpJsonValidation;
 import com.ccp.validation.annotations.Year;
 import com.ccp.validation.enums.AllowedValuesValidations;
 import com.ccp.validation.enums.ObjectNumberValidations;
@@ -14,7 +14,7 @@ import com.ccp.validation.enums.SimpleArrayValidations;
 import com.ccp.validation.enums.SimpleObjectValidations;
 import com.ccp.validation.enums.YearValidations;
 
-@ValidationRules(
+@CcpJsonValidation(
 
 		simpleObject = {
 				@SimpleObject(rule = SimpleObjectValidations.requiredFields, 

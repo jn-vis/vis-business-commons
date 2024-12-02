@@ -2,17 +2,18 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-//super(Fields.values());
-public class VisEntitySkillApproved{
-	private VisEntitySkillApproved() {
-	}
-	
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
+@CcpEntityTwin(twinEntityName = "skill_approved")
+@CcpEntitySpecifications(cacheableEntity = true)
+public class VisEntitySkillPending{
+
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntitySkillPending.class);
 	
 	public static enum Fields implements CcpEntityField{
-		skill(true), synonym(false), prerequiste(false), ranking(false)
+		skill(true), synonym(false), prerequisite(false), ranking(false)
 		;
 		private final boolean primaryKey;
 

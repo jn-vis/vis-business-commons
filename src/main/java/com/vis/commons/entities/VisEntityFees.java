@@ -2,15 +2,19 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityAuditable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.validation.annotations.ValidationRules;
+import com.ccp.validation.annotations.CcpJsonValidation;
+import com.jn.commons.utils.JnAuditableEntity;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisFees;
 
-//super(Fields.values());
-@ValidationRules(rulesClass = JsonFieldsValidationsVisFees.class)
+@CcpEntityAuditable(auditableEntityFactory = JnAuditableEntity.class)
+@CcpJsonValidation(rulesClass = JsonFieldsValidationsVisFees.class)
+@CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntityFees{
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityFees.class);
 
 	public static enum Fields implements CcpEntityField{
 		fee(false), service(true)

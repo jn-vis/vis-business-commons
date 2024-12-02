@@ -2,9 +2,10 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-//super(Fields.values());
+@CcpEntitySpecifications(cacheableEntity = false, virtualEntity = true)
 public class VisEntityVirtualHashGrouper{
 
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
@@ -24,7 +25,4 @@ public class VisEntityVirtualHashGrouper{
 		}
 	}
 
-	public boolean isVirtualEntity() {
-		return true;
-	}
 }

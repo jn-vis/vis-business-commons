@@ -8,7 +8,7 @@ import com.ccp.validation.annotations.SimpleObject;
 import com.ccp.validation.annotations.ObjectTextSize;
 import com.ccp.validation.annotations.Regex;
 import com.ccp.validation.annotations.SimpleArray;
-import com.ccp.validation.annotations.ValidationRules;
+import com.ccp.validation.annotations.CcpJsonValidation;
 import com.ccp.validation.enums.AllowedValuesValidations;
 import com.ccp.validation.enums.DayValidations;
 import com.ccp.validation.enums.ObjectNumberValidations;
@@ -16,7 +16,7 @@ import com.ccp.validation.enums.ObjectTextSizeValidations;
 import com.ccp.validation.enums.SimpleArrayValidations;
 import com.ccp.validation.enums.SimpleObjectValidations;
 
-@ValidationRules(
+@CcpJsonValidation(
 		regex = {
 				@Regex(value = CcpConstants.EMAIL_REGEX, fields = "email")
 		},

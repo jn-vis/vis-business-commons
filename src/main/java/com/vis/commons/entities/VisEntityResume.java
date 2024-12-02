@@ -2,14 +2,18 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityAuditable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.validation.annotations.ValidationRules;
+import com.jn.commons.utils.JnAuditableEntity;
 
-//super("inactive_resume", Fields.values());
-@ValidationRules()
+@CcpEntityAuditable(auditableEntityFactory = JnAuditableEntity.class)
+@CcpEntityTwin(twinEntityName = "inactive_resume")
+@CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntityResume{
 	
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityResume.class);
 	
 	public static enum Fields implements CcpEntityField{
 		btc(false), 

@@ -2,13 +2,13 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-//super(CcpLongevityEntity.monthly, Fields.values());
+@CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntityResumeFreeView{
-	
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityVirtualHashGrouper.class);
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityResumeFreeView.class);
 
 	public static enum Fields implements CcpEntityField{
 		recruiter(true), email(true), date(false), timestamp(false)
