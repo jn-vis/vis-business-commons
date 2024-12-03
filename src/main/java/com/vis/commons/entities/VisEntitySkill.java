@@ -3,11 +3,12 @@ package com.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = true, pathToFirstRecords = "C:\\eclipse-workspaces\\ccp\\jn\\jn-dependency-chooser-documentation-and-junit-testing\\documentation\\skills\\synonyms.json")
 public class VisEntitySkill{
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntitySkill.class);
+	
+	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntitySkill.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		parent(false), positionsCount(false), preRequisite(false), ranking(false), 

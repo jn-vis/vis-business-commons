@@ -4,13 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntityTwin(twinEntityName = "skill_approved")
 @CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntitySkillPending{
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntitySkillPending.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntitySkillPending.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		skill(true), synonym(false), prerequisite(false), ranking(false)

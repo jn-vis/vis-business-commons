@@ -3,12 +3,16 @@ package com.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.jn.commons.utils.JnEntityExpurgable;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.monthly)
 public class VisEntityResumeFreeView{
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityResumeFreeView.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityResumeFreeView.class).entityInstance;
 
 	public static enum Fields implements CcpEntityField{
 		recruiter(true), email(true), date(false), timestamp(false)

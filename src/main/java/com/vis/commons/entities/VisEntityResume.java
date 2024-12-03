@@ -5,7 +5,7 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
@@ -13,7 +13,7 @@ import com.jn.commons.utils.JnEntityVersionable;
 @CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntityResume{
 	
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityResume.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityResume.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		btc(false), 

@@ -3,12 +3,12 @@ package com.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntityResumeLastView{
 	
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(VisEntityResumeLastView.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityResumeLastView.class).entityInstance;
 
 	public static enum Fields implements CcpEntityField{
 		recruiter(true), email(true), date(false), timestamp(false), negativatedResume(false), 
