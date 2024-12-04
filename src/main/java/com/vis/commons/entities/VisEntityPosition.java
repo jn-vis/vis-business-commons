@@ -5,13 +5,14 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_position")
 @CcpEntitySpecifications(cacheableEntity = true)
-public class VisEntityPosition{
+public class VisEntityPosition implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityPosition.class).entityInstance;
 

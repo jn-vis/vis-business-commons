@@ -1,10 +1,10 @@
 package com.jn.vis.commons.validations;
 
 import com.ccp.validation.annotations.SimpleObject;
-import com.ccp.validation.annotations.CcpJsonValidation;
+import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 import com.ccp.validation.enums.SimpleObjectValidations;
 
-@CcpJsonValidation(simpleObject = {
+@CcpJsonFieldsValidation(simpleObject = {
 		@SimpleObject(fields = "balance", rule = SimpleObjectValidations.requiredFields)
 	}
 )

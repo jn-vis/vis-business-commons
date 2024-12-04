@@ -2,14 +2,15 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.validation.annotations.CcpJsonValidation;
+import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisDeniedViewToCompany;
 
-@CcpJsonValidation(rulesClass = JsonFieldsValidationsVisDeniedViewToCompany.class)
+@CcpJsonFieldsValidation(rulesClass = JsonFieldsValidationsVisDeniedViewToCompany.class)
 @CcpEntitySpecifications(cacheableEntity = true)
-public class VisEntityDeniedViewToCompany{
+public class VisEntityDeniedViewToCompany implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityDeniedViewToCompany.class).entityInstance;
 

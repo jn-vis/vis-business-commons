@@ -4,13 +4,14 @@ package com.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
-import com.ccp.validation.annotations.CcpJsonValidation;
+import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 import com.jn.vis.commons.validations.JsonFieldsValidationsVisBalance;
 
-@CcpJsonValidation(rulesClass = JsonFieldsValidationsVisBalance.class)
+@CcpJsonFieldsValidation(rulesClass = JsonFieldsValidationsVisBalance.class)
 @CcpEntitySpecifications(cacheableEntity = true)
-public class VisEntityBalance{
+public class VisEntityBalance implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityBalance.class).entityInstance;
 	

@@ -1,12 +1,19 @@
 package com.vis.commons.entities;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.ccp.decorators.CcpStringDecorator;
+import com.ccp.especifications.db.bulk.CcpBulkItem;
+import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 
-@CcpEntitySpecifications(cacheableEntity = true, pathToFirstRecords = "C:\\eclipse-workspaces\\ccp\\jn\\jn-dependency-chooser-documentation-and-junit-testing\\documentation\\skills\\synonyms.json")
-public class VisEntitySkill{
+@CcpEntitySpecifications(cacheableEntity = true)
+public class VisEntitySkill implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntitySkill.class).entityInstance;
 	
@@ -22,5 +29,12 @@ public class VisEntitySkill{
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
+	}
+	
+	public List<CcpBulkItem> getFirstRecordsToInsert() {
+		List<CcpBulkItem> collect = new CcpStringDecorator("C:\\eclipse-workspaces\\ccp\\jn\\jn-dependency-chooser-documentation-and-junit-testing\\documentation\\skills\\synonyms.json")
+		.file().asJsonList().stream().map(json -> new CcpBulkItem(json, CcpEntityOperationType.create, ENTITY)).collect(Collectors.toList());
+		;
+		return collect;
 	}
 }
