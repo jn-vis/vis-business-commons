@@ -47,8 +47,6 @@ public enum VisAsyncBusiness implements JnTopic{
 		this.validationClass = this.getClass();
 	}
 
-
-
 	public Class<?> validationClass() {
 		return this.validationClass;
 	}
