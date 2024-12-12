@@ -2,14 +2,14 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
+import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.jn.commons.utils.JnEntityVersionable;
 
-@CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
+@CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_resume")
 @CcpEntitySpecifications(cacheableEntity = true)
 public class VisEntityResume implements CcpEntityConfigurator {

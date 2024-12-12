@@ -25,9 +25,4 @@ public class VisEntityVirtualHashGrouper implements CcpEntityConfigurator {
 			return this.primaryKey;
 		}
 	}
-
-	public boolean isVirtualEntity() {
-		return true;
-	}
-
 }
