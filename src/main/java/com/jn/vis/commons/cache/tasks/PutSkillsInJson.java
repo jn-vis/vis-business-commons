@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.ccp.constantes.CcpConstants;
+import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpTextDecorator;
 import com.ccp.especifications.cache.CcpCacheDecorator;
@@ -53,7 +53,7 @@ public class PutSkillsInJson implements Function<CcpJsonRepresentation, CcpJsonR
 			.filter(synonym -> wordsThatWasFoundDirectlyInThisText.contains(synonym) == false)
 			.collect(Collectors.toSet());
 			List<CcpJsonRepresentation> skills = wordsThatWasFoundDirectlyInThisText.stream().map(
-					word -> CcpConstants.EMPTY_JSON
+					word -> CcpOtherConstants.EMPTY_JSON
 										.put("synonym", wordsThatWasFoundAsSynonymInThisText)
 										.put("parent", parents)
 										.put("skill", word)

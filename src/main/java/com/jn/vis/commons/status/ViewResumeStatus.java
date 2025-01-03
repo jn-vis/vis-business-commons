@@ -22,7 +22,7 @@ public enum ViewResumeStatus implements CcpProcessStatus{
 		this.status = status;
 	}
 
-	public int status() {
+	public int asNumber() {
 		return this.status;
 	}
 
