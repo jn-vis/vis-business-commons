@@ -1,4 +1,4 @@
-package com.jn.vis.commons.validations;
+package com.vis.commons.json.validations;
 
 import com.ccp.validation.annotations.AllowedValues;
 import com.ccp.validation.annotations.ObjectNumbers;
@@ -87,6 +87,6 @@ import com.ccp.validation.enums.YearValidations;
 						fields = { "btc", "clt", "pj" }) }
 
 )
-public class JsonFieldsValidationsVisResume {
+public class VisJsonValidationResume {
 
 }

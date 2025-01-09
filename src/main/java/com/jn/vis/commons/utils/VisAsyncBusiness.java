@@ -1,20 +1,20 @@
 package com.jn.vis.commons.utils;
 
 import com.jn.commons.utils.JnTopic;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisPosition;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionId;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionReceivingResumes;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisPositionSendResumesToEmail;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisRecruiterReceivingResumes;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisResume;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisResumeOpinion;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisResumeViewAdd;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisSkillsSuggest;
+import com.vis.commons.json.validations.VisJsonValidationPosition;
+import com.vis.commons.json.validations.VisJsonValidationPositionId;
+import com.vis.commons.json.validations.VisJsonValidationPositionReceivingResumes;
+import com.vis.commons.json.validations.VisJsonValidationPositionSendResumesToEmail;
+import com.vis.commons.json.validations.VisJsonValidationRecruiterReceivingResumes;
+import com.vis.commons.json.validations.VisJsonValidationResume;
+import com.vis.commons.json.validations.VisJsonValidationResumeOpinion;
+import com.vis.commons.json.validations.VisJsonValidationResumeViewAdd;
+import com.vis.commons.json.validations.VisJsonValidationSkillsSuggest;
 
 public enum VisAsyncBusiness implements JnTopic{
-	resumeOpinionChange(JsonFieldsValidationsVisResumeOpinion.class), 
-	resumeOpinionSave(JsonFieldsValidationsVisResumeOpinion.class), 
-	resume(JsonFieldsValidationsVisResume.class),
+	resumeOpinionChange(VisJsonValidationResumeOpinion.class), 
+	resumeOpinionSave(VisJsonValidationResumeOpinion.class), 
+	resume(VisJsonValidationResume.class),
 	groupResumesOpinionsByResume, 
 	groupResumeViewsByResume, 
 	resumeStatusChange, 
@@ -24,15 +24,15 @@ public enum VisAsyncBusiness implements JnTopic{
 
 	groupResumeViewsByRecruiter, 
 	groupResumesOpinionsByRecruiter, 
-	positionSave(JsonFieldsValidationsVisPosition.class),
-	positionStatusChange(JsonFieldsValidationsVisPositionId.class), 
-	positionResumesSend(JsonFieldsValidationsVisPositionSendResumesToEmail.class), 
-	positionResumesReceivingByFrequency(JsonFieldsValidationsVisPositionReceivingResumes.class),
+	positionSave(VisJsonValidationPosition.class),
+	positionStatusChange(VisJsonValidationPositionId.class), 
+	positionResumesSend(VisJsonValidationPositionSendResumesToEmail.class), 
+	positionResumesReceivingByFrequency(VisJsonValidationPositionReceivingResumes.class),
 
-	recruiterReceivingResumes(JsonFieldsValidationsVisRecruiterReceivingResumes.class), 
+	recruiterReceivingResumes(VisJsonValidationRecruiterReceivingResumes.class), 
 
-	skillsSuggest(JsonFieldsValidationsVisSkillsSuggest.class), 
-	resumeViewSave(JsonFieldsValidationsVisResumeViewAdd.class), 
+	skillsSuggest(VisJsonValidationSkillsSuggest.class), 
+	resumeViewSave(VisJsonValidationResumeViewAdd.class), 
 	
 	getRecentLoggedUsers, 
 	;

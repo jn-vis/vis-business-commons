@@ -3,14 +3,15 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisBalance;
+import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
+import com.vis.commons.json.validations.VisJsonValidationBalance;
 
-@CcpJsonFieldsValidation(rulesClass = JsonFieldsValidationsVisBalance.class)
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpJsonFieldsValidation(rulesClass = VisJsonValidationBalance.class)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
 public class VisEntityBalance implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityBalance.class).entityInstance;

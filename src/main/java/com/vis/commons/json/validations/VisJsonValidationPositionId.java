@@ -1,4 +1,4 @@
-package com.jn.vis.commons.validations;
+package com.vis.commons.json.validations;
 
 import com.ccp.constantes.CcpStringConstants;
 import com.ccp.validation.annotations.AllowedValues;
@@ -78,6 +78,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 				@Day(rule = DayValidations.equalsOrLessThan, fields = { "expireDate" }, bound = 365), }
 
 )
-public class JsonFieldsValidationsVisRecruiterReceivingResumes {
+public class VisJsonValidationPositionId {
 
 }

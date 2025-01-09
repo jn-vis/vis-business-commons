@@ -1,4 +1,4 @@
-package com.jn.vis.commons.validations;
+package com.vis.commons.json.validations;
 
 import com.ccp.constantes.CcpStringConstants;
 import com.ccp.validation.annotations.ObjectTextSize;
@@ -26,6 +26,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 		}
 
 )
-public class JsonFieldsValidationsVisSkillsSuggest {
+public class VisJsonValidationSkillsSuggest {
 
 }

@@ -8,11 +8,11 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 import com.jn.commons.utils.JnEntityVersionable;
-import com.jn.vis.commons.validations.JsonFieldsValidationsVisFees;
+import com.vis.commons.json.validations.VisJsonValidationFees;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpJsonFieldsValidation(rulesClass = JsonFieldsValidationsVisFees.class)
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpJsonFieldsValidation(rulesClass = VisJsonValidationFees.class)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 public class VisEntityFees implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityFees.class).entityInstance;

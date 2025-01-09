@@ -1,4 +1,4 @@
-package com.jn.vis.commons.validations;
+package com.vis.commons.json.validations;
 
 import com.ccp.constantes.CcpStringConstants;
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
@@ -16,7 +16,7 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 		simpleObject = { @SimpleObject(rule = SimpleObjectValidations.requiredFields, fields = { "resumeBase64",
 				"resumeText", }), }, objectTextSize = {
 						@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {
-								"resumeBase64" }, bound = 4200000),
+								"resumeBase64" }, bound = 4_200_000),
 						@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrLessThan, fields = {
 								"resumeText" }, bound = 2_100_000),
 						@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, fields = {
@@ -26,6 +26,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 		}
 
 )
-public class JsonFieldsValidationsVisPositionSendResumesToEmail {
+public class VisJsonValidationResumeViewAdd {
 
 }

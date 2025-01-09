@@ -2,16 +2,18 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
-import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
-import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.utils.JnEntityVersionable;
+import com.vis.commons.json.transformers.VisJsonTransformerPutEmailHashAndDomainRecruiter;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_position")
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, VisJsonTransformerPutEmailHashAndDomainRecruiter.class})
 public class VisEntityPosition implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityPosition.class).entityInstance;
