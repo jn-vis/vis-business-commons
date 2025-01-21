@@ -1,4 +1,4 @@
-package com.jn.vis.commons.utils;
+package com.vis.commons.utils;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpPropertiesDecorator;

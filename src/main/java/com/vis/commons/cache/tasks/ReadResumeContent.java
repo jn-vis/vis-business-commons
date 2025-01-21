@@ -1,11 +1,11 @@
-package com.jn.vis.commons.cache.tasks;
+package com.vis.commons.cache.tasks;
 
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.file.bucket.CcpFileBucketOperation;
-import com.jn.vis.commons.utils.VisCommonsUtils;
 import com.vis.commons.entities.VisEntityResume;
+import com.vis.commons.utils.VisCommonsUtils;
 
 public class ReadResumeContent implements Function<CcpJsonRepresentation, String>{
 

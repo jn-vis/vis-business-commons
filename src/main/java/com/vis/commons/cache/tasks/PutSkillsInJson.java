@@ -1,4 +1,4 @@
-package com.jn.vis.commons.cache.tasks;
+package com.vis.commons.cache.tasks;
 
 import java.util.ArrayList;
 import java.util.List;

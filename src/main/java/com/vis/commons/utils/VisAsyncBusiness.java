@@ -1,4 +1,4 @@
-package com.jn.vis.commons.utils;
+package com.vis.commons.utils;
 
 import com.jn.commons.utils.JnTopic;
 import com.vis.commons.json.validations.VisJsonValidationPosition;

@@ -1,4 +1,4 @@
-package com.jn.vis.commons.status;
+package com.vis.commons.status;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
