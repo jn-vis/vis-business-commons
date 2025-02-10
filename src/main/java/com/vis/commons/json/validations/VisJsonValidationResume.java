@@ -30,7 +30,6 @@ import com.ccp.validation.enums.YearValidations;
 						"fileName",
 						"observations", 
 						"resumeBase64", 
-						"originalEmail",
 						"email"
 						}),
 				@SimpleObject(rule = SimpleObjectValidations.requiredAtLeastOne, 
