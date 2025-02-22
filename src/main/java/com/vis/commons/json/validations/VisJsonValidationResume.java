@@ -37,7 +37,7 @@ import com.ccp.validation.enums.YearValidations;
 				@SimpleObject(rule = SimpleObjectValidations.nonRepeatedLists, 
 				fields = { "ddd", "disabilities", "companiesNotAllowed" }),
 				@SimpleObject(rule = SimpleObjectValidations.integerFields, 
-				fields = { "disponibility" }), }
+				fields = { "disponibility" , "experience"}), }
 
 		, allowedValues = {
 				@AllowedValues(rule = AllowedValuesValidations.arrayWithAllowedNumbers, 
