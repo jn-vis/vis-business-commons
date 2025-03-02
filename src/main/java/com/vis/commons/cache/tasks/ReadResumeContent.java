@@ -14,7 +14,7 @@ public class ReadResumeContent implements Function<CcpJsonRepresentation, String
 	private ReadResumeContent() {}
 	
 	public String apply(CcpJsonRepresentation json) {
-		String email = json.getAsString("email");
+		String email = json.getAsString(VisEntityResume.Fields.email.name());
 		String folder = "resumes/" + email;
 		String file = "" + json.getAsLongNumber(VisEntityResume.Fields.timestamp.name());
 		String tenant = VisCommonsUtils.getTenant();

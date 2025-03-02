@@ -10,6 +10,8 @@ import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpTextDecorator;
 import com.ccp.especifications.cache.CcpCacheDecorator;
+import com.vis.commons.entities.VisEntityResume;
+import com.vis.commons.entities.VisEntitySkill;
 
 public class PutSkillsInJson implements Function<CcpJsonRepresentation, CcpJsonRepresentation>{
 
@@ -31,9 +33,9 @@ public class PutSkillsInJson implements Function<CcpJsonRepresentation, CcpJsonR
 		for (CcpJsonRepresentation skill : resultAsList) {
 		
 			Set<String> allSynonyms = 
-					skill.getAsJsonList("synonym")
+					skill.getAsJsonList(VisEntitySkill.Fields.synonym.name())
 					.stream()
-					.map(synonym -> synonym.getAsString("skill"))
+					.map(synonym -> synonym.getAsString(VisEntityResume.Fields.skill.name()))
 					.collect(Collectors.toSet());
 			
 			Set<String> wordsThatWasFoundDirectlyInThisText = allSynonyms
@@ -47,16 +49,16 @@ public class PutSkillsInJson implements Function<CcpJsonRepresentation, CcpJsonR
 				continue;
 			}
 			
-			List<String> parents = skill.getAsStringList("parent");
+			List<String> parents = skill.getAsStringList(VisEntitySkill.Fields.parent.name());
 			Set<String> wordsThatWasFoundAsSynonymInThisText = allSynonyms
 			.stream()
 			.filter(synonym -> wordsThatWasFoundDirectlyInThisText.contains(synonym) == false)
 			.collect(Collectors.toSet());
 			List<CcpJsonRepresentation> skills = wordsThatWasFoundDirectlyInThisText.stream().map(
 					word -> CcpOtherConstants.EMPTY_JSON
-										.put("synonym", wordsThatWasFoundAsSynonymInThisText)
-										.put("parent", parents)
-										.put("skill", word)
+										.put(VisEntitySkill.Fields.synonym.name(), wordsThatWasFoundAsSynonymInThisText)
+										.put(VisEntitySkill.Fields.parent.name(), parents)
+										.put(VisEntitySkill.Fields.skill.name(), word)
 					).collect(Collectors.toList());
 			allSkills.addAll(skills);
 		}

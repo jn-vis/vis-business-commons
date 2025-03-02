@@ -18,7 +18,7 @@ public class VisEntitySkill implements CcpEntityConfigurator {
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntitySkill.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
-		parent(false), positionsCount(false), preRequisite(false), ranking(false), 
+		parent(false), positionsCount(false), prerequisite(false), ranking(false), 
 		similar(false), skill(true), synonym(false)
 		;
 		private final boolean primaryKey;

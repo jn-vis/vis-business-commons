@@ -4,6 +4,8 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpPropertiesDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.especifications.file.bucket.CcpFileBucketOperation;
+import com.vis.commons.entities.VisEntityBalance;
+import com.vis.commons.entities.VisEntityFees;
 import com.vis.commons.entities.VisEntityResume;
 
 public class VisCommonsUtils {
@@ -18,9 +20,9 @@ public class VisCommonsUtils {
 	public static boolean isInsufficientFunds(int itemsCount, 
 			CcpJsonRepresentation fee, CcpJsonRepresentation balance) {
 	
-		Double feeValue = fee.getAsDoubleNumber("fee");
+		Double feeValue = fee.getAsDoubleNumber(VisEntityFees.Fields.fee.name());
 		
-		Double balanceValue = balance.getAsDoubleNumber("balance");
+		Double balanceValue = balance.getAsDoubleNumber(VisEntityBalance.Fields.balance.name());
 		
 		Double totalCostToThisRecruiter = feeValue * itemsCount;
 		
@@ -29,7 +31,7 @@ public class VisCommonsUtils {
 		return insuficientFunds;
 	}
 	public static CcpJsonRepresentation getResumeFromBucket(CcpJsonRepresentation json) {
-		String email = json.getAsString("email");
+		String email = json.getAsString(VisEntityResume.Fields.email.name());
 		String folder = "resumes/" + email;
 		String file = "" + json.getAsLongNumber(VisEntityResume.Fields.timestamp.name());
 		String tenant = VisCommonsUtils.getTenant();
