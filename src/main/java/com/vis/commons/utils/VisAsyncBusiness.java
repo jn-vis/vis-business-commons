@@ -17,7 +17,7 @@ public enum VisAsyncBusiness implements JnTopic{
 	resume(VisJsonValidationResume.class),
 	groupResumesOpinionsByResume, 
 	groupResumeViewsByResume, 
-	resumeStatusChange, 
+	resumeStatusChange,  
 	resumeBucketSave, 
 	resumeDelete, 
 	resumeSave,
