@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
-import com.ccp.especifications.db.bulk.CcpEntityOperationType;
+import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
@@ -33,7 +33,7 @@ public class VisEntitySkill implements CcpEntityConfigurator {
 	
 	public List<CcpBulkItem> getFirstRecordsToInsert() {
 		List<CcpBulkItem> collect = new CcpStringDecorator("C:\\eclipse-workspaces\\ccp\\jn\\jn-dependency-chooser-documentation-and-junit-testing\\documentation\\skills\\synonyms.json")
-		.file().asJsonList().stream().map(json -> ENTITY.toBulkItem(json, CcpEntityOperationType.create)).collect(Collectors.toList());
+		.file().asJsonList().stream().map(json -> ENTITY.toBulkItem(json, CcpEntityBulkOperationType.create)).collect(Collectors.toList());
 		;
 		return collect;
 	}
