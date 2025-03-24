@@ -2,10 +2,10 @@ package com.vis.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
-import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecorators;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 import com.jn.commons.utils.JnEntityVersionable;
 import com.vis.commons.json.validations.VisJsonValidationFees;
