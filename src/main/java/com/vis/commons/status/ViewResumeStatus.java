@@ -27,7 +27,7 @@ public enum ViewResumeStatus implements CcpProcessStatus{
 	}
 
 	public CcpBulkItem toBulkItemCreate(CcpJsonRepresentation json) {
-		CcpBulkItem bulkItem = VisEntityResumeViewFailed.ENTITY.toBulkItem(json, CcpEntityBulkOperationType.create);
+		CcpBulkItem bulkItem = VisEntityResumeViewFailed.ENTITY.getMainBulkItem(json, CcpEntityBulkOperationType.create);
 		return bulkItem;
 	}
 }
