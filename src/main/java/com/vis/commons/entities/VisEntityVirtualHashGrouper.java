@@ -5,7 +5,7 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 
-@CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = false, stepsBeforeSaveEntity = {})
 public class VisEntityVirtualHashGrouper{
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityVirtualHashGrouper.class).entityInstance;

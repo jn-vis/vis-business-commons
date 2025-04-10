@@ -12,7 +12,7 @@ import com.jn.commons.utils.JnEntityVersionable;
 import com.vis.commons.json.transformers.VisJsonTransformerPutEmailHashAndDomainRecruiter;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, VisJsonTransformerPutEmailHashAndDomainRecruiter.class, JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class, VisJsonTransformerPutEmailHashAndDomainRecruiter.class, JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class VisEntityResumePerception implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityResumePerception.class).entityInstance;

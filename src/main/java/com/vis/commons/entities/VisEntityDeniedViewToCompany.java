@@ -10,7 +10,7 @@ import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.vis.commons.json.validations.VisJsonValidationDeniedViewToCompany;
 
 @CcpJsonFieldsValidation(rulesClass = VisJsonValidationDeniedViewToCompany.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class})
 public class VisEntityDeniedViewToCompany implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityDeniedViewToCompany.class).entityInstance;

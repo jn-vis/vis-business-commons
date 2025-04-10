@@ -12,7 +12,7 @@ import com.vis.commons.json.validations.VisJsonValidationFees;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpJsonFieldsValidation(rulesClass = VisJsonValidationFees.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {})
 public class VisEntityFees implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityFees.class).entityInstance;

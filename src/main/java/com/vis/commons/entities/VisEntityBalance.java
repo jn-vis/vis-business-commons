@@ -11,7 +11,7 @@ import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.vis.commons.json.validations.VisJsonValidationBalance;
 
 @CcpJsonFieldsValidation(rulesClass = VisJsonValidationBalance.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class})
 public class VisEntityBalance implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityBalance.class).entityInstance;

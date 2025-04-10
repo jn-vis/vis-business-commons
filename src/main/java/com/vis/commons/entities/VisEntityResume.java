@@ -9,10 +9,29 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.utils.JnEntityVersionable;
+import com.vis.commons.business.resume.VisCommonsBusinessExtractSkillsFromResumeText;
+import com.vis.commons.business.resume.VisCommonsBusinessExtractTextFromResume;
+import com.vis.commons.business.resume.VisCommonsBusinessSaveResumeInBucket;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_resume")
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
+@CcpEntitySpecifications(cacheableEntity = true, 
+stepsBeforeSaveEntity = 
+{
+		JnJsonTransformerPutEmailHash.class,
+		VisCommonsBusinessExtractTextFromResume.class,
+		VisCommonsBusinessExtractSkillsFromResumeText.class	
+		
+
+},
+
+stepsAfterSaveEntity = {
+		VisCommonsBusinessSaveResumeInBucket.class
+
+}
+
+		
+		)
 public class VisEntityResume implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityResume.class).entityInstance;
