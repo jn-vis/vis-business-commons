@@ -22,9 +22,8 @@ import com.ccp.especifications.db.query.CcpQueryExecutor;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.jn.commons.mensageria.JnMensageriaSender;
-import com.jn.commons.utils.JnCommonsExecuteBulkOperation;
-import com.jn.commons.utils.TransferRecordToReverseEntity;
-import com.vis.commons.business.position.VisAsyncBusinessPositionResumesSend;
+import com.jn.commons.utils.JnExecuteBulkOperation;
+import com.vis.commons.business.position.VisBusinessPositionResumesSend;
 import com.vis.commons.entities.VisEntityBalance;
 import com.vis.commons.entities.VisEntityDeniedViewToCompany;
 import com.vis.commons.entities.VisEntityGroupPositionsByRecruiter;
@@ -60,7 +59,7 @@ public class VisAsyncUtils {
 
 		List<CcpJsonRepresentation> allPositionsWithFilteredAndSortedResumesAndStatis = allPositionsWithFilteredResumesAndTheirStatis.stream().map(positionsWithFilteredResumes -> getStatisToThisPosition(positionsWithFilteredResumes)).collect(Collectors.toList());
 		
-		new JnMensageriaSender(VisAsyncBusinessPositionResumesSend.INSTANCE).send(allPositionsWithFilteredAndSortedResumesAndStatis);
+		new JnMensageriaSender(VisBusinessPositionResumesSend.INSTANCE).send(allPositionsWithFilteredAndSortedResumesAndStatis);
 		
 		return allPositionsWithFilteredAndSortedResumesAndStatis;
 	}
@@ -284,7 +283,7 @@ public class VisAsyncUtils {
 					allPositionsGroupedByRecruiters, allPositionsWithFilteredResumes, searchParameters, searchResults);
 		}
 		
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(errors);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(errors);
 		
 	 	CcpJsonRepresentation allPositionsWithFilteredResumesCopy = CcpOtherConstants.EMPTY_JSON.putAll(allPositionsWithFilteredResumes);
 		
@@ -499,22 +498,6 @@ public class VisAsyncUtils {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
-	public static void changeStatus(CcpJsonRepresentation json, CcpEntity activeEntity,
-			Function<CcpJsonRepresentation, CcpJsonRepresentation> actionPosActivate,
-			Function<CcpJsonRepresentation, CcpJsonRepresentation> actionPosInactivate
-			) {
-		CcpEntity inactiveResumeEntity = activeEntity.getTwinEntity();
-		TransferRecordToReverseEntity tryToChangeStatusToActive = new TransferRecordToReverseEntity(inactiveResumeEntity, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING);
-		TransferRecordToReverseEntity tryToChangeStatusToInactive = new TransferRecordToReverseEntity(activeEntity, actionPosInactivate, actionPosActivate, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING);
-
-		JnCommonsExecuteBulkOperation.INSTANCE.
-		executeSelectUnionAllThenExecuteBulkOperation(
-				json 
-				, tryToChangeStatusToActive
-				, tryToChangeStatusToInactive
-				);
-	}
 
 
 	
@@ -567,7 +550,7 @@ public class VisAsyncUtils {
 
 		List<CcpBulkItem> allPagesTogether = getRecordsInPages(records, primaryKeySupplier, entity);
 		
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(allPagesTogether);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(allPagesTogether);
 	}
 
 	public static List<CcpBulkItem> getRecordsInPages(List<CcpJsonRepresentation> records,

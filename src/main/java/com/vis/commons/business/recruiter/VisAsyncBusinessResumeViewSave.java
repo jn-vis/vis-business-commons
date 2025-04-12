@@ -7,7 +7,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
 import com.ccp.jn.commons.mensageria.JnTopic;
-import com.jn.commons.utils.JnCommonsExecuteBulkOperation;
+import com.jn.commons.utils.JnExecuteBulkOperation;
 import com.vis.commons.entities.VisEntityPosition;
 import com.vis.commons.entities.VisEntityResume;
 import com.vis.commons.entities.VisEntityResumeFreeView;
@@ -51,7 +51,7 @@ public class VisAsyncBusinessResumeViewSave implements JnTopic{
 		bulkItems.add(itemResumeFreeView);
 		bulkItems.add(itemResumeLastView);
 		
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return json;
 	}
 

@@ -9,6 +9,7 @@ import com.ccp.especifications.db.crud.CcpGetEntityId;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
+import com.ccp.jn.commons.mensageria.JnEntityTransferRecordToReverseEntity;
 import com.ccp.jn.commons.mensageria.JnMensageriaSender;
 import com.jn.commons.utils.JnDeleteKeysFromCache;
 import com.vis.commons.business.resume.GetResumeContent;
@@ -44,7 +45,7 @@ public class SyncServiceVisPosition {
 	
 	public CcpJsonRepresentation changeStatus(CcpJsonRepresentation json) {
 
-		CcpJsonRepresentation result = new JnMensageriaSender(VisEntityPosition.ENTITY, CcpEntityCrudOperationType.changeStatus).apply(json);
+		CcpJsonRepresentation result = new JnMensageriaSender(VisEntityPosition.ENTITY, JnEntityTransferRecordToReverseEntity.class).apply(json);
 		
 		return result;
 	}

@@ -3,10 +3,11 @@ package com.vis.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecorators;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityOperationSpecification;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTransferOperationEspecification;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTwin;
-import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityValidation;
-import com.ccp.especifications.db.utils.decorators.configurations.CcpNoValidation;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreFieldsValidation;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
@@ -18,9 +19,10 @@ import com.vis.commons.business.resume.VisCommonsBusinessSaveResumeInBucket;
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_resume")
 @CcpEntitySpecifications(
-		changeStatus = @CcpEntityValidation(afterOperation = {}, beforeOperation = {}, jsonValidationClass = CcpNoValidation.class),
-		delete = @CcpEntityValidation(afterOperation = {}, beforeOperation = {}, jsonValidationClass = CcpNoValidation.class),
-	    save = @CcpEntityValidation(afterOperation = {VisCommonsBusinessSaveResumeInBucket.class}, beforeOperation = {JnJsonTransformerPutEmailHash.class, VisCommonsBusinessExtractTextFromResume.class, VisCommonsBusinessExtractSkillsFromResumeText.class}, jsonValidationClass = CcpNoValidation.class),
+		inactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
+		reactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
+		delete = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
+	    save = @CcpEntityOperationSpecification(afterOperation = {VisCommonsBusinessSaveResumeInBucket.class}, beforeOperation = {JnJsonTransformerPutEmailHash.class, VisCommonsBusinessExtractTextFromResume.class, VisCommonsBusinessExtractSkillsFromResumeText.class}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
 		cacheableEntity = true
 )
 		

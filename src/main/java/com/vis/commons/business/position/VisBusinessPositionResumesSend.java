@@ -3,11 +3,11 @@ package com.vis.commons.business.position;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.jn.commons.mensageria.JnTopic;
 
-public class VisAsyncBusinessPositionResumesSend implements JnTopic{
+public class VisBusinessPositionResumesSend implements JnTopic{
 
-	private VisAsyncBusinessPositionResumesSend() {}
+	private VisBusinessPositionResumesSend() {}
 	
-	public static final VisAsyncBusinessPositionResumesSend INSTANCE = new VisAsyncBusinessPositionResumesSend();
+	public static final VisBusinessPositionResumesSend INSTANCE = new VisBusinessPositionResumesSend();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		return json;
