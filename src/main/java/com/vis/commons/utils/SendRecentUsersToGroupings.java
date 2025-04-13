@@ -6,13 +6,13 @@ import java.util.stream.Collectors;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.jn.commons.mensageria.JnMensageriaSender;
 import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumeViewsByRecruiter;
 import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumeViewsByResume;
 import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumesOpinionsByRecruiter;
 import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumesOpinionsByResume;
-import com.jn.commons.entities.JnEntityDisposableRecord;
-import com.jn.commons.entities.JnEntityLoginSessionValidation;
+import com.jn.entities.JnEntityDisposableRecord;
+import com.jn.entities.JnEntityLoginSessionValidation;
+import com.jn.mensageria.JnMensageriaSender;
 
 public class SendRecentUsersToGroupings implements Consumer<List<CcpJsonRepresentation>> {
 	

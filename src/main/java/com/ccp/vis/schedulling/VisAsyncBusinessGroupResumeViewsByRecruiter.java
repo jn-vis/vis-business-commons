@@ -1,7 +1,7 @@
 package com.ccp.vis.schedulling;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.jn.commons.mensageria.JnTopic;
+import com.jn.mensageria.JnTopic;
 import com.vis.commons.entities.VisEntityGroupResumeViewsByRecruiter;
 import com.vis.commons.entities.VisEntityResumeFreeView;
 import com.vis.commons.utils.VisAsyncUtils;

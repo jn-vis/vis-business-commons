@@ -5,7 +5,7 @@ import java.util.function.Function;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.exceptions.process.CcpFlowDisturb;
-import com.ccp.jn.commons.mensageria.JnMensageriaSender;
+import com.jn.mensageria.JnMensageriaSender;
 import com.vis.commons.entities.VisEntityBalance;
 import com.vis.commons.entities.VisEntityFees;
 import com.vis.commons.entities.VisEntityResumeLastView;

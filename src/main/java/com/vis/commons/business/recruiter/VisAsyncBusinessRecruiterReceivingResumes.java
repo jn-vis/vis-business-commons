@@ -1,7 +1,7 @@
 package com.vis.commons.business.recruiter;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.jn.commons.mensageria.JnTopic;
+import com.jn.mensageria.JnTopic;
 
 public class VisAsyncBusinessRecruiterReceivingResumes implements JnTopic{
 

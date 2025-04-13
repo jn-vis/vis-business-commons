@@ -10,8 +10,8 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreField
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableOptions;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
-import com.jn.commons.utils.JnEntityExpurgable;
+import com.jn.entities.decorators.JnEntityExpurgable;
+import com.jn.json.transformers.JnJsonTransformerPutEmailHash;
 
 @CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.yearly, expurgableEntityFactory = JnEntityExpurgable.class)
 @CcpEntitySpecifications(

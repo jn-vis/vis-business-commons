@@ -1,7 +1,7 @@
 package com.vis.commons.business.position;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.jn.commons.mensageria.JnTopic;
+import com.jn.mensageria.JnTopic;
 
 public class VisBusinessPositionResumesSend implements JnTopic{
 

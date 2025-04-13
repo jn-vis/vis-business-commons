@@ -3,9 +3,9 @@ package com.vis.commons.utils;
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.jn.commons.messages.JnCommonsSendMessage;
-import com.jn.commons.entities.JnEntityEmailMessageSent;
-import com.jn.commons.entities.JnEntityEmailTemplateMessage;
+import com.jn.entities.JnEntityEmailMessageSent;
+import com.jn.entities.JnEntityEmailTemplateMessage;
+import com.jn.messages.JnSendMessage;
 
 public class VisCommonsBusinessNotifyResumeOwner implements Function<CcpJsonRepresentation, CcpJsonRepresentation>{
 
@@ -16,7 +16,7 @@ public class VisCommonsBusinessNotifyResumeOwner implements Function<CcpJsonRepr
 				
 			String language = json.getAsObject(JnEntityEmailTemplateMessage.Fields.language.name());
 			
-			JnCommonsSendMessage sender = new JnCommonsSendMessage();
+			JnSendMessage sender = new JnSendMessage();
 			sender
 			.addDefaultProcessForEmailSending()
 			.soWithAllAddedProcessAnd()

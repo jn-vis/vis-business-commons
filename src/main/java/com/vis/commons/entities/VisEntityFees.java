@@ -9,7 +9,7 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTrans
 import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreFieldsValidation;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.utils.JnEntityVersionable;
+import com.jn.entities.decorators.JnEntityVersionable;
 import com.vis.commons.json.validations.VisJsonValidationFees;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)

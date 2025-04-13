@@ -3,7 +3,7 @@ package com.vis.commons.business.resume;
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.jn.commons.utils.JnExecuteBulkOperation;
+import com.jn.db.bulk.JnExecuteBulkOperation;
 import com.vis.commons.cache.tasks.PutSkillsInJson;
 import com.vis.commons.entities.VisEntityResume;
 import com.vis.commons.utils.VisAsyncBusinessResumeSendToRecruiters;

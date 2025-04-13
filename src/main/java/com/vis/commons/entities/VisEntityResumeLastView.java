@@ -8,8 +8,8 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTrans
 import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreFieldsValidation;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
-import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
+import com.jn.json.transformers.JnJsonTransformerPutEmailHash;
+import com.jn.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 import com.vis.commons.json.transformers.VisJsonTransformerPutEmailHashAndDomainRecruiter;
 
 @CcpEntitySpecifications(

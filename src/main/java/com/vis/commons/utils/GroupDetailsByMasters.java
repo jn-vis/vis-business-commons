@@ -9,7 +9,7 @@ import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.jn.commons.utils.JnExecuteBulkOperation;
+import com.jn.db.bulk.JnExecuteBulkOperation;
 
 public class GroupDetailsByMasters implements Consumer<CcpJsonRepresentation>{
 	

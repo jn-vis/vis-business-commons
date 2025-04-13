@@ -4,9 +4,9 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.query.CcpDbQueryOptions;
 import com.ccp.especifications.db.query.CcpQueryExecutor;
-import com.ccp.jn.commons.mensageria.JnTopic;
-import com.jn.commons.entities.JnEntityDisposableRecord;
-import com.jn.commons.entities.JnEntityLoginSessionValidation;
+import com.jn.entities.JnEntityDisposableRecord;
+import com.jn.entities.JnEntityLoginSessionValidation;
+import com.jn.mensageria.JnTopic;
 import com.vis.commons.utils.FrequencyOptions;
 import com.vis.commons.utils.SendRecentUsersToGroupings;
 
