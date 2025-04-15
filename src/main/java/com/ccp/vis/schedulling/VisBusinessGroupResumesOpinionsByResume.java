@@ -6,11 +6,11 @@ import com.vis.commons.entities.VisEntityGroupResumesPerceptionsByResume;
 import com.vis.commons.entities.VisEntityResumePerception;
 import com.vis.commons.utils.VisAsyncUtils;
 
-public class VisAsyncBusinessGroupResumesOpinionsByResume implements JnTopic{
+public class VisBusinessGroupResumesOpinionsByResume implements JnTopic{
 
-	private VisAsyncBusinessGroupResumesOpinionsByResume() {}
+	private VisBusinessGroupResumesOpinionsByResume() {}
 	
-	public static final VisAsyncBusinessGroupResumesOpinionsByResume INSTANCE = new VisAsyncBusinessGroupResumesOpinionsByResume();
+	public static final VisBusinessGroupResumesOpinionsByResume INSTANCE = new VisBusinessGroupResumesOpinionsByResume();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		

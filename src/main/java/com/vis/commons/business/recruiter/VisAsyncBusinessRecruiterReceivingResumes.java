@@ -1,9 +1,9 @@
 package com.vis.commons.business.recruiter;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.jn.mensageria.JnTopic;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 
-public class VisAsyncBusinessRecruiterReceivingResumes implements JnTopic{
+public class VisAsyncBusinessRecruiterReceivingResumes implements CcpTopic{
 
 	private VisAsyncBusinessRecruiterReceivingResumes() {}
 	

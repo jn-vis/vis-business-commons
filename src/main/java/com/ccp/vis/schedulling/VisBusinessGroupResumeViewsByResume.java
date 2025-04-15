@@ -6,11 +6,11 @@ import com.vis.commons.entities.VisEntityGroupResumeViewsByResume;
 import com.vis.commons.entities.VisEntityResumeFreeView;
 import com.vis.commons.utils.VisAsyncUtils;
 
-public class VisAsyncBusinessGroupResumeViewsByResume implements JnTopic{
+public class VisBusinessGroupResumeViewsByResume implements JnTopic{
 
-	private VisAsyncBusinessGroupResumeViewsByResume() {}
+	private VisBusinessGroupResumeViewsByResume() {}
 	
-	public static final VisAsyncBusinessGroupResumeViewsByResume INSTANCE = new VisAsyncBusinessGroupResumeViewsByResume();
+	public static final VisBusinessGroupResumeViewsByResume INSTANCE = new VisBusinessGroupResumeViewsByResume();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		CcpJsonRepresentation groupDetailsByMasters = VisAsyncUtils.groupDetailsByMasters(

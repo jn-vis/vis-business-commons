@@ -1,10 +1,10 @@
 package com.vis.commons.business.position;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.jn.mensageria.JnTopic;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.vis.commons.entities.VisEntityPosition;
 
-public class VisBusinessDuplicateFieldEmailToFieldMasters implements JnTopic{
+public class VisBusinessDuplicateFieldEmailToFieldMasters implements CcpTopic{
 
 	public static final VisBusinessDuplicateFieldEmailToFieldMasters INSTANCE = new VisBusinessDuplicateFieldEmailToFieldMasters();
 	

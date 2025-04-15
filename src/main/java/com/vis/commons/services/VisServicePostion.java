@@ -1,4 +1,4 @@
-package com.vis.commons.business.position;
+package com.vis.commons.services;
 
 
 import com.ccp.constantes.CcpOtherConstants;
@@ -9,7 +9,7 @@ import com.ccp.especifications.db.crud.CcpGetEntityId;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
-import com.jn.mensageria.JnBulkHandlers;
+import com.ccp.especifications.mensageria.receiver.CcpBulkHandlers;
 import com.jn.mensageria.JnMensageriaSender;
 import com.jn.utils.JnDeleteKeysFromCache;
 import com.vis.commons.business.resume.GetResumeContent;
@@ -30,11 +30,11 @@ import com.vis.commons.entities.VisEntitySkillRejected;
 import com.vis.commons.status.SuggestNewSkillStatus;
 import com.vis.commons.status.ViewResumeStatus;
 
-public class SyncServiceVisPosition {
+public class VisServicePostion {
 	
-	private SyncServiceVisPosition() {}
+	private VisServicePostion() {}
 	
-	public static final SyncServiceVisPosition INSTANCE = new SyncServiceVisPosition();
+	public static final VisServicePostion INSTANCE = new VisServicePostion();
 	
 	public CcpJsonRepresentation save(CcpJsonRepresentation json) {
 		
@@ -45,7 +45,7 @@ public class SyncServiceVisPosition {
 	
 	public CcpJsonRepresentation changeStatus(CcpJsonRepresentation json) {
 
-		CcpJsonRepresentation result = new JnMensageriaSender(VisEntityPosition.ENTITY, JnBulkHandlers.transferToReverseEntity).apply(json);
+		CcpJsonRepresentation result = new JnMensageriaSender(VisEntityPosition.ENTITY, CcpBulkHandlers.transferToReverseEntity).apply(json);
 		
 		return result;
 	}

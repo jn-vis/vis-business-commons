@@ -1,9 +1,9 @@
 package com.vis.commons.business.position;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.jn.mensageria.JnTopic;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 
-public class VisBusinessPositionResumesSend implements JnTopic{
+public class VisBusinessPositionResumesSend implements CcpTopic{
 
 	private VisBusinessPositionResumesSend() {}
 	

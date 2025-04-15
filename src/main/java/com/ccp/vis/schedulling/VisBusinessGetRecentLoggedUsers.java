@@ -4,17 +4,17 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.query.CcpDbQueryOptions;
 import com.ccp.especifications.db.query.CcpQueryExecutor;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityDisposableRecord;
 import com.jn.entities.JnEntityLoginSessionValidation;
-import com.jn.mensageria.JnTopic;
 import com.vis.commons.utils.FrequencyOptions;
 import com.vis.commons.utils.SendRecentUsersToGroupings;
 
-public class VisAsyncBusinessGetRecentLoggedUsers implements JnTopic{
+public class VisBusinessGetRecentLoggedUsers implements CcpTopic{
 
-	private VisAsyncBusinessGetRecentLoggedUsers() {}
+	private VisBusinessGetRecentLoggedUsers() {}
 	
-	public static final VisAsyncBusinessGetRecentLoggedUsers INSTANCE = new VisAsyncBusinessGetRecentLoggedUsers();
+	public static final VisBusinessGetRecentLoggedUsers INSTANCE = new VisBusinessGetRecentLoggedUsers();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		

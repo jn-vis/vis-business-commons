@@ -1,12 +1,12 @@
 package com.vis.commons.utils;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityEmailMessageSent;
 import com.jn.entities.JnEntityEmailTemplateMessage;
-import com.jn.mensageria.JnTopic;
 import com.jn.messages.JnSendMessage;
 
-public enum VisAsyncBusinessSendEmailMessageAndRegisterEmailSent implements JnTopic{
+public enum VisAsyncBusinessSendEmailMessageAndRegisterEmailSent implements CcpTopic{
 
 	
 	resumeSuccessSaving,

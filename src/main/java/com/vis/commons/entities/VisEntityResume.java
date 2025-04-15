@@ -15,6 +15,7 @@ import com.jn.json.transformers.JnJsonTransformerPutEmailHash;
 import com.vis.commons.business.resume.VisCommonsBusinessExtractSkillsFromResumeText;
 import com.vis.commons.business.resume.VisCommonsBusinessExtractTextFromResume;
 import com.vis.commons.business.resume.VisCommonsBusinessSaveResumeInBucket;
+import com.vis.commons.utils.VisAsyncBusinessResumeSendToRecruiters;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_resume")
@@ -22,7 +23,7 @@ import com.vis.commons.business.resume.VisCommonsBusinessSaveResumeInBucket;
 		inactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
 		reactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
 		delete = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
-	    save = @CcpEntityOperationSpecification(afterOperation = {VisCommonsBusinessSaveResumeInBucket.class}, beforeOperation = {JnJsonTransformerPutEmailHash.class, VisCommonsBusinessExtractTextFromResume.class, VisCommonsBusinessExtractSkillsFromResumeText.class}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
+	    save = @CcpEntityOperationSpecification(afterOperation = {VisCommonsBusinessSaveResumeInBucket.class, VisAsyncBusinessResumeSendToRecruiters.class }, beforeOperation = {JnJsonTransformerPutEmailHash.class, VisCommonsBusinessExtractTextFromResume.class, VisCommonsBusinessExtractSkillsFromResumeText.class}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
 		cacheableEntity = true
 )
 		

@@ -511,8 +511,8 @@ public class VisAsyncUtils {
 	
 	public static CcpJsonRepresentation groupDetailsByMasters(
 			CcpJsonRepresentation json, 
-			CcpEntity entity, 
-			CcpEntity groupEntity, 
+			CcpEntity entityToRead, 
+			CcpEntity entityWhereGroup, 
 			CcpEntityField masterField, 
 			CcpEntityField ascField) {
 		//1
@@ -530,9 +530,9 @@ public class VisAsyncUtils {
 		;
 		CcpQueryExecutor queryExecutor = CcpDependencyInjection.getDependency(CcpQueryExecutor.class);
 		
-		String[] entitiesToSelect = entity.getEntitiesToSelect();
+		String[] entitiesToSelect = entityToRead.getEntitiesToSelect();
 		
-		GroupDetailsByMasters detailsGroupedByMasters = new GroupDetailsByMasters(masterField.name(), entity, groupEntity);
+		GroupDetailsByMasters detailsGroupedByMasters = new GroupDetailsByMasters(masterField.name(), entityToRead, entityWhereGroup);
 		
 		queryExecutor.consumeQueryResult(query, entitiesToSelect, "10s", 10000, detailsGroupedByMasters);
 		

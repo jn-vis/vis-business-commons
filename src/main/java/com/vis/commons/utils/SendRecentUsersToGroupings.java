@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumeViewsByRecruiter;
-import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumeViewsByResume;
-import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumesOpinionsByRecruiter;
-import com.ccp.vis.schedulling.VisAsyncBusinessGroupResumesOpinionsByResume;
+import com.ccp.vis.schedulling.VisBusinessGroupResumeViewsByRecruiter;
+import com.ccp.vis.schedulling.VisBusinessGroupResumeViewsByResume;
+import com.ccp.vis.schedulling.VisBusinessGroupResumesOpinionsByRecruiter;
+import com.ccp.vis.schedulling.VisBusinessGroupResumesOpinionsByResume;
 import com.jn.entities.JnEntityDisposableRecord;
 import com.jn.entities.JnEntityLoginSessionValidation;
 import com.jn.mensageria.JnMensageriaSender;
@@ -29,10 +29,10 @@ public class SendRecentUsersToGroupings implements Consumer<List<CcpJsonRepresen
 		
 		CcpJsonRepresentation message = CcpOtherConstants.EMPTY_JSON.put("masters", emails);
 		
-		new JnMensageriaSender(VisAsyncBusinessGroupResumesOpinionsByRecruiter.INSTANCE).send(message);
-		VisAsyncBusinessGroupResumesOpinionsByResume.INSTANCE.sendToMensageria(message);
-		VisAsyncBusinessGroupResumeViewsByRecruiter.INSTANCE.sendToMensageria(message);
-		VisAsyncBusinessGroupResumeViewsByResume.INSTANCE.sendToMensageria(message);
+		new JnMensageriaSender(VisBusinessGroupResumesOpinionsByRecruiter.INSTANCE).send(message);
+		VisBusinessGroupResumesOpinionsByResume.INSTANCE.sendToMensageria(message);
+		VisBusinessGroupResumeViewsByRecruiter.INSTANCE.sendToMensageria(message);
+		VisBusinessGroupResumeViewsByResume.INSTANCE.sendToMensageria(message);
 	}
 
 }

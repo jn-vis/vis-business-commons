@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.jn.mensageria.JnTopic;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.vis.commons.entities.VisEntityPosition;
 import com.vis.commons.entities.VisEntityResume;
 import com.vis.commons.utils.FrequencyOptions;
 import com.vis.commons.utils.VisAsyncUtils;
 
-public class VisAsyncBusinessPositionResumesReceivingByFrequency  implements JnTopic{
+public class VisBusinessPositionResumesReceivingByFrequency  implements CcpTopic{
 
-	private VisAsyncBusinessPositionResumesReceivingByFrequency() {}
+	private VisBusinessPositionResumesReceivingByFrequency() {}
 	
-	public static final VisAsyncBusinessPositionResumesReceivingByFrequency INSTANCE = new VisAsyncBusinessPositionResumesReceivingByFrequency();
+	public static final VisBusinessPositionResumesReceivingByFrequency INSTANCE = new VisBusinessPositionResumesReceivingByFrequency();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation schedullingPlan) {
 

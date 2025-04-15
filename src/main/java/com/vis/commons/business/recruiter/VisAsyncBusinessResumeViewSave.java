@@ -6,15 +6,15 @@ import java.util.List;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.db.bulk.JnExecuteBulkOperation;
-import com.jn.mensageria.JnTopic;
 import com.vis.commons.entities.VisEntityPosition;
 import com.vis.commons.entities.VisEntityResume;
 import com.vis.commons.entities.VisEntityResumeFreeView;
 import com.vis.commons.entities.VisEntityResumeLastView;
 import com.vis.commons.entities.VisEntityResumePerception;
 
-public class VisAsyncBusinessResumeViewSave implements JnTopic{
+public class VisAsyncBusinessResumeViewSave implements CcpTopic{
 
 	private VisAsyncBusinessResumeViewSave() {}
 	
