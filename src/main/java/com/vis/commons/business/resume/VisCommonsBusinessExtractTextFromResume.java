@@ -9,6 +9,10 @@ import com.vis.commons.exceptions.VisCommonsEmptyResumeText;
 
 public class VisCommonsBusinessExtractTextFromResume implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
 
+	private VisCommonsBusinessExtractTextFromResume () {}
+	
+	public static final VisCommonsBusinessExtractTextFromResume INSTANCE = new VisCommonsBusinessExtractTextFromResume();
+	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		CcpTextExtractor textExtractor = CcpDependencyInjection.getDependency(CcpTextExtractor.class);
 

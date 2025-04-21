@@ -1,5 +1,9 @@
 package com.vis.commons.entities;
 
+import java.util.function.Function;
+
+import com.ccp.constantes.CcpOtherConstants;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecorators;
@@ -11,7 +15,7 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreField
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.entities.decorators.JnEntityVersionable;
-import com.jn.json.transformers.JnJsonTransformerPutEmailHash;
+import com.jn.json.transformers.JnDefaultEntityFields;
 import com.vis.commons.business.resume.VisCommonsBusinessExtractSkillsFromResumeText;
 import com.vis.commons.business.resume.VisCommonsBusinessExtractTextFromResume;
 import com.vis.commons.business.resume.VisCommonsBusinessSaveResumeInBucket;
@@ -20,20 +24,20 @@ import com.vis.commons.utils.VisAsyncBusinessResumeSendToRecruiters;
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntityTwin(twinEntityName = "inactive_resume")
 @CcpEntitySpecifications(
-		inactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
-		reactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
-		delete = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
-	    save = @CcpEntityOperationSpecification(afterOperation = {VisCommonsBusinessSaveResumeInBucket.class, VisAsyncBusinessResumeSendToRecruiters.class }, beforeOperation = {JnJsonTransformerPutEmailHash.class, VisCommonsBusinessExtractTextFromResume.class, VisCommonsBusinessExtractSkillsFromResumeText.class}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
+		classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class,
+		inactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {})),
+		reactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {})),
+		delete = @CcpEntityOperationSpecification(afterOperation = {}),
+	    save = @CcpEntityOperationSpecification(afterOperation = {VisCommonsBusinessSaveResumeInBucket.class, VisAsyncBusinessResumeSendToRecruiters.class }),
 		cacheableEntity = true
 )
-		
 public class VisEntityResume implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(VisEntityResume.class).entityInstance;
-	
+	//DOUBT DÁ PRA MANTER A ORDEM?
 	public static enum Fields implements CcpEntityField{
-		btc(false), // VEM DO FRONT
-		clt(false), // VEM DO FRONT
+		clt(false, VisCommonsBusinessExtractTextFromResume.INSTANCE), // VEM DO FRONT
+		btc(false, VisCommonsBusinessExtractSkillsFromResumeText.INSTANCE), // VEM DO FRONT
 		companiesNotAllowed(false), // VEM DO FRONT 
 		date(false),// AUTOMATICO
 		ddd(false), // VEM DO FRONT
@@ -49,8 +53,19 @@ public class VisEntityResume implements CcpEntityConfigurator {
 		;
 		private final boolean primaryKey;
 
+		private final Function<CcpJsonRepresentation, CcpJsonRepresentation> transformer;
+		
 		private Fields(boolean primaryKey) {
+			this(primaryKey, CcpOtherConstants.DO_NOTHING);
+		}
+
+		private Fields(boolean primaryKey, Function<CcpJsonRepresentation, CcpJsonRepresentation> transformer) {
+			this.transformer = transformer;
 			this.primaryKey = primaryKey;
+		}
+		
+		public Function<CcpJsonRepresentation, CcpJsonRepresentation> getTransformer() {
+			return this.transformer == CcpOtherConstants.DO_NOTHING ? JnDefaultEntityFields.getTransformer(this) : this.transformer;
 		}
 
 		public boolean isPrimaryKey() {
